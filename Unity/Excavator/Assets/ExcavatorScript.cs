@@ -2,6 +2,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using AGXUnity;
 using TMPro;
+using System.Collections;
+using System.Collections.Generic;
+using System;
 
 public class ExcavatorScript : MonoBehaviour
 {
@@ -12,9 +15,12 @@ public class ExcavatorScript : MonoBehaviour
 
     // Track Variables
     private float forwardSpeed = 3f;
-    private float turnSpeed = 2f;
+    private float turnSpeed = 3f;
     private TargetSpeedController leftController;
     private TargetSpeedController rightController;
+    private float leftTrackSpeed = 0.0f;
+    private float rightTrackSpeed = 0.0f;
+    private bool trackCommandReceived = false;
 
     // Arm Variables
     private int selectedArmIndex = 0;
@@ -73,6 +79,8 @@ public class ExcavatorScript : MonoBehaviour
 
         if (leftController != null && rightController != null)
         {
+            // Debug.Log(forwardInput);
+            // Debug.Log(forwardInput + turnInput);
             leftController.Speed = forwardInput + turnInput;
             rightController.Speed = forwardInput - turnInput;
         }
@@ -87,8 +95,18 @@ public class ExcavatorScript : MonoBehaviour
             SelectNextArmPart();
         }
 
+        if (trackCommandReceived)
+        {
+            if (leftController != null && rightController != null)
+            {
+                leftController.Speed = leftTrackSpeed;
+                rightController.Speed = rightTrackSpeed;
+            }   
+        }
+
         // Handle up and down arrow key input for moving the selected arm part
         HandleArmMovement();
+        // MoveExcavatorTracks(3, 3);
     }
 
     void HandleArmMovement()
@@ -135,5 +153,31 @@ public class ExcavatorScript : MonoBehaviour
         TextMeshProUGUI textMesh = canvasBoard.GetComponent<TextMeshProUGUI>();
         textMesh.text = text;
         // Debug.Log(((armParts)selectedArmIndex));
+    }
+
+    // Method to move the tracks (called by the ROS subscriber)
+    public void MoveExcavatorTracks(float leftTrackSpeed_, float rightTrackSpeed_)
+    {
+        Debug.Log(leftTrackSpeed_);
+        leftTrackSpeed = 3f;
+        rightTrackSpeed = 3f;
+        trackCommandReceived = true; 
+    }
+
+
+    // Method to move the excavator arm (called by the ROS subscriber)
+    public void MoveExcavatorArm(float slewSpeed, float boomSpeed, float armSpeed, float bucketSpeed)
+    {
+        if (armControllers[(int)armParts.full_arm_rotation] != null)
+            armControllers[(int)armParts.full_arm_rotation].Speed = slewSpeed;
+
+        if (armControllers[(int)armParts.lower_arm] != null)
+            armControllers[(int)armParts.lower_arm].Speed = boomSpeed;
+
+        if (armControllers[(int)armParts.upperToLow] != null)
+            armControllers[(int)armParts.upperToLow].Speed = armSpeed;
+
+        if (armControllers[(int)armParts.scoop1] != null)
+            armControllers[(int)armParts.scoop1].Speed = bucketSpeed;
     }
 }
