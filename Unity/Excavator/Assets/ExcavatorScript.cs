@@ -62,8 +62,9 @@ public class ExcavatorScript : MonoBehaviour
                 if (armConstraint != null)
                 {
                     armControllers[(int)part] = armConstraint.GetController<TargetSpeedController>();
-                    // var controller = armConstraint.GetController<TargetSpeedController>();
-                    // controller.Speed = -2;
+                    var controller = armConstraint.GetController<TargetSpeedController>();
+                    // float currentTorque = controller.GetCurrentForce();
+                    // Debug.Log("Current Torque: " + currentTorque);
                 }
             }
         }
@@ -128,9 +129,12 @@ public class ExcavatorScript : MonoBehaviour
     void SetArmSpeed(float speed)
     {
         var selectedArmController = armControllers[selectedArmIndex];
+        var selectedArmConstraint = armGameObjects[selectedArmIndex].GetComponent<AGXUnity.Constraint>();
         if (selectedArmController != null)
         {
             selectedArmController.Speed = speed;
+            float currentTorque = selectedArmController.GetCurrentForce();
+            Debug.Log("Current Torque: " + currentTorque);
         }
     }
 
