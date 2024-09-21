@@ -19,7 +19,7 @@ This project simulates an excavator in Unity using ROS integration and custom co
 ## Requirements
 Ensure you have the following software installed:
 
-- [Unity](https://unity.com/)
+- [Unity](https://unity.com/download)
 - [ROS Humble](http://docs.ros.org/en/humble/Installation.html)
 - [Git LFS](https://git-lfs.github.com/)
 - [Algoryx AGX Dynamics for Unity](https://us.download.algoryx.se/AGXUnity/documentation/current/index.html)
@@ -33,18 +33,20 @@ First, clone the repository to your local machine. Ensure Git LFS is set up befo
 git lfs install
 git clone https://github.com/droneslab/moog-simulation.git
 cd moog-simulation
+```
 
-## 2. Install Dependencies
-Make sure you have all required Unity packages and ROS dependencies installed.
+### 2. Unity Setup
 
 ### Unity
 1. Open the project in Unity:
    - Open Unity Hub and click on "Add."
    - Select the `Unity/Excavator` folder from the cloned repository.
-   
-2. Ensure that the following Unity packages are installed:
-   - **Algoryx Dynamics for Unity** (`com.algoryx.agxunity`).
+   - In Unity, navigate to the `Unity/Excavator/Assets/` directory in the Project window locate the main scene named `Excavator_Sim.unity` for simulating the excavator.
 
-## 3. Unity Setup
-1. In Unity, navigate to the `Unity/Excavator/Assets/` directory to find the main scene for the excavator simulation.
+2. Ensure that the AGX Dynamics for Unity plugin downloaded earlier is installed by going to the menu bar and selecting **Assets -> Import Package -> Custom Package**.
+
+### 3. Setting Up the ROS Connector
+1. In the Unity menu bar, go to **Window -> Package Manager**, click the **+** icon, and select **Add package from git URL...**. Enter the following URL:  
+   [https://github.com/Unity-Technologies/ROS-TCP-Connector?path=/com.unity.robotics.ros-tcp-connector](https://github.com/Unity-Technologies/ROS-TCP-Connector?path=/com.unity.robotics.ros-tcp-connector)
+2. After the package is installed, the **Robotics** option will appear in the Unity menu bar.
 
