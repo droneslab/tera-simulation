@@ -45,8 +45,9 @@ cd moog-simulation
 
 2. Ensure that the AGX Dynamics for Unity plugin downloaded earlier is installed by going to the menu bar and selecting **Assets -> Import Package -> Custom Package**.
 
-### 3. Setting Up the ROS Connector
+### Setting Up the ROS Connector
 1. In the Unity menu bar, go to **Window -> Package Manager**, click the **+** icon, and select **Add package from git URL...**. Enter the following URL:  
    [https://github.com/Unity-Technologies/ROS-TCP-Connector?path=/com.unity.robotics.ros-tcp-connector](https://github.com/Unity-Technologies/ROS-TCP-Connector?path=/com.unity.robotics.ros-tcp-connector)
-2. After the package is installed, the **Robotics** option will appear in the Unity menu bar.
-
+2. After the package is installed, the **Robotics** option will appear in the Unity menu bar and Open it to configure ROS settings and ROS Messages.
+   (https://github.com/user-attachments/assets/038e8f9d-c628-41d0-bf91-d7e2ec2cbbc7)
+3. 
