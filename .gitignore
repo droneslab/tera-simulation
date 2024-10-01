@@ -1,6 +1,6 @@
 # Ignore Unity scene files
-*.unity
-*.meta
+#*.unity
+#*.meta
 
 # Ignore Directory
 Unity/Excavator/Logs/
