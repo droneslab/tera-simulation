@@ -228,6 +228,7 @@
 <joint_properties friction="0.0"/>
 </joint>
 
+<<<<<<< HEAD
 <link name="track_roller_wheel_1">
 <visual>
 <origin xyz="5.5511151231257827021e-17 0 -0.079000000000000070166" rpy="-1.570796326794896558 -1.570796326794896558 0" />
@@ -483,6 +484,9 @@
 <limit effort="1" velocity="20" />
 <joint_properties friction="0.0"/>
 </joint>
+=======
+
+>>>>>>> main
 
 <joint name="tankSpin_wheel" type="continuous">
 <origin xyz="-0.25 -2.6052883279480892481e-15 -0.050000000000000002776" rpy="-5.5511151231419568159e-17 -1.1102230246202266528e-16 1.57079632679489678" />
