@@ -41,14 +41,23 @@ cd moog-simulation
 
 2. Ensure that the AGX Dynamics for Unity plugin downloaded earlier is installed by going to the menu bar and selecting **Assets -> Import Package -> Custom Package**.
 
-#### Setting Up the ROS Connector
-1. In the Unity menu bar, go to **Window -> Package Manager**, click the **+** icon, and select **Add package from git URL...**. Enter the following URL:  
+#### Setting Up Unity Packages
+1. In the Unity menu bar, go to **Window -> Package Manager**, click the **+** icon, and select **Add package from git URL...**. Enter the following URLs (One at a time):  
    [https://github.com/Unity-Technologies/ROS-TCP-Connector?path=/com.unity.robotics.ros-tcp-connector](https://github.com/Unity-Technologies/ROS-TCP-Connector?path=/com.unity.robotics.ros-tcp-connector)
    [https://github.com/Field-Robotics-Japan/UnitySensors.git?path=/Assets/UnitySensors#v2.0.4](https://github.com/Field-Robotics-Japan/UnitySensors.git?path=/Assets/UnitySensors#v2.0.4)
    [https://github.com/Field-Robotics-Japan/UnitySensors.git?path=/Assets/UnitySensorsROS#v2.0.4](https://github.com/Field-Robotics-Japan/UnitySensors.git?path=/Assets/UnitySensorsROS#v2.0.4)
-3. After the packages are installed, the **Robotics** option will appear in the Unity menu bar and Open it to configure ROS settings and ROS Messages.
+3. In the Unity menu bar, go to **Window -> Package Manager**, click the **+** icon, and select **Add package by name**. Enter the following name **com.unity.asset-manager-for-unity**. Select **Add**.
+
+### Import Assets
+1. In the Unity menu bar, go to **Window -> Asset Manager**
+2. Press **Import**
+3. Select the **Excavator** file you want to import
+4. Import it to **Assets\Prefab**
+
+### Configuring ROS TCP Endpoint
+1. After the packages are installed, the **Robotics** option will appear in the Unity menu bar and Open it to configure ROS settings and ROS Messages.
    ![image](https://github.com/user-attachments/assets/038e8f9d-c628-41d0-bf91-d7e2ec2cbbc7)
-4. Generate Custom ROSMessages inside Unity by specifying the path to Deltcan package folder from the cloned repository.
+2. Generate Custom ROSMessages inside Unity by specifying the path to Deltcan package folder from the cloned repository.
 
 ### ROS2 Setup
 
