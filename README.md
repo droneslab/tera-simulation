@@ -50,9 +50,9 @@ cd moog-simulation
 
 ### Import Assets
 1. In the Unity menu bar, go to **Window -> Asset Manager**
-2. Press **Import**
-3. Select the **Excavator** file you want to import
-4. Import it to **Assets\Prefab**
+2. Select the **Excavator** file you want to import
+3. Hit the dropdown in the bottom right. Press **Import To**
+4. Import it to **<Project_Folder>\Unity\Excavator\Assets\Prefab**
 
 ### Configuring ROS TCP Endpoint
 1. After the packages are installed, the **Robotics** option will appear in the Unity menu bar and Open it to configure ROS settings and ROS Messages.
