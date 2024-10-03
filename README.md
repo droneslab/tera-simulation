@@ -19,7 +19,6 @@ Ensure you have the following software installed:
 
 - [Unity](https://unity.com/download)
 - [ROS Humble](http://docs.ros.org/en/humble/Installation.html)
-- [Git LFS](https://git-lfs.github.com/)
 - [Algoryx AGX Dynamics for Unity](https://us.download.algoryx.se/AGXUnity/documentation/current/index.html)
   
 ## Installation
@@ -28,7 +27,6 @@ Ensure you have the following software installed:
 First, clone the repository to your local machine. Ensure Git LFS is set up before cloning to manage large files.
 
 ```bash
-git lfs install
 git clone https://github.com/droneslab/moog-simulation.git
 cd moog-simulation
 ```
@@ -46,9 +44,11 @@ cd moog-simulation
 #### Setting Up the ROS Connector
 1. In the Unity menu bar, go to **Window -> Package Manager**, click the **+** icon, and select **Add package from git URL...**. Enter the following URL:  
    [https://github.com/Unity-Technologies/ROS-TCP-Connector?path=/com.unity.robotics.ros-tcp-connector](https://github.com/Unity-Technologies/ROS-TCP-Connector?path=/com.unity.robotics.ros-tcp-connector)
-2. After the package is installed, the **Robotics** option will appear in the Unity menu bar and Open it to configure ROS settings and ROS Messages.
+   [https://github.com/Field-Robotics-Japan/UnitySensors.git?path=/Assets/UnitySensors#v2.0.4](https://github.com/Field-Robotics-Japan/UnitySensors.git?path=/Assets/UnitySensors#v2.0.4)
+   [https://github.com/Field-Robotics-Japan/UnitySensors.git?path=/Assets/UnitySensorsROS#v2.0.4](https://github.com/Field-Robotics-Japan/UnitySensors.git?path=/Assets/UnitySensorsROS#v2.0.4)
+3. After the packages are installed, the **Robotics** option will appear in the Unity menu bar and Open it to configure ROS settings and ROS Messages.
    ![image](https://github.com/user-attachments/assets/038e8f9d-c628-41d0-bf91-d7e2ec2cbbc7)
-3. Generate Custom ROSMessages inside Unity by specifying the path to Deltcan package folder from the cloned repository.
+4. Generate Custom ROSMessages inside Unity by specifying the path to Deltcan package folder from the cloned repository.
 
 ### ROS2 Setup
 
@@ -60,6 +60,11 @@ cd moog-simulation
    source install/setup.bash
    ```
 2. After building the workspace, establish the connection between Unity and ROS2 by running the following command:
+   If you are running default IP addresses and ports you can just run the launch file
+   ```bash
+   ros2 launch ros_tcp_endpoint params.py
+   ```
+   or if you need to specify an IP address or port
    ```bash
    ros2 run ros_tcp_endpoint default_server_endpoint --ros-args -p ROS_IP:=<your_IP_address> -p ROS_TCP_PORT:=<your_port>
    ```
