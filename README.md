@@ -24,7 +24,7 @@ Ensure you have the following software installed:
 ## Unity Login
 - Email: excavator.hardware@gmail.com
 - User: UB-Excavator-Team
--Password: Droneslab123
+- Password: Droneslab123
 ## Installation
 
 ### 1. Clone Repository
