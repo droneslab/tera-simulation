@@ -20,7 +20,11 @@ Ensure you have the following software installed:
 - [Unity](https://unity.com/download)
 - [ROS Humble](http://docs.ros.org/en/humble/Installation.html)
 - [Algoryx AGX Dynamics for Unity](https://us.download.algoryx.se/AGXUnity/documentation/current/index.html)
-  
+
+## Unity Login
+- Email: excavator.hardware@gmail.com
+- User: UB-Excavator-Team
+-Password: Droneslab123
 ## Installation
 
 ### 1. Clone Repository
