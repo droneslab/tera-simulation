@@ -64,7 +64,7 @@ public class ExcavatorScript : MonoBehaviour
             }
         }
 
-        UpdateSelectedArmText();
+        // UpdateSelectedArmText();
     }
 
     void Update()
@@ -138,20 +138,20 @@ public class ExcavatorScript : MonoBehaviour
         {
             selectedArmController.Speed = speed;
             float currentTorque = selectedArmController.GetCurrentForce();
-            Debug.Log("Current Torque: " + currentTorque);
+            // Debug.Log("Current Torque: " + currentTorque);
         }
     }
 
     void SelectNextArmPart()
     {
         selectedArmIndex = (selectedArmIndex + 1) % armGameObjects.Length;
-        UpdateSelectedArmText();
+        // UpdateSelectedArmText();
     }
 
     void SelectPreviousArmPart()
     {
         selectedArmIndex = (selectedArmIndex - 1 + armGameObjects.Length) % armGameObjects.Length;
-        UpdateSelectedArmText();
+        // UpdateSelectedArmText();
     }
 
     void UpdateSelectedArmText()
