@@ -9319,7 +9319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54dc23949876a8117b8e6817c3c9c59f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  excavatorScript: {fileID: 0}
+  excavatorScript: {fileID: 8994968442291511602}
 --- !u!1 &5665044287688925131
 GameObject:
   m_ObjectHideFlags: 0
