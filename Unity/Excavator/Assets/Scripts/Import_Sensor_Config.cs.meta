@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 6428b59f50e0b3eb98aa6ce57301dc63
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - excavatorPrefab: {fileID: 7210873327385068898, guid: f8935bea11e3ec5c1a70c9e066e669cb, type: 3}
+  - IMUPrefab: {fileID: 232150617613513197, guid: 68e0875adf39cbcaab689ba0165c0d42, type: 3}
+  - GPSPrefab: {fileID: 3192925013080293980, guid: 6c364f20083a9cf4c8e7a2c139d4c571, type: 3}
+  - RGBCameraPrefab: {fileID: 2016422477619200586, guid: ae5d0d7848c9e3c46a8ba3ca8b9f3413, type: 3}
+  - RGBDCameraPrefab: {fileID: 4853532333615571027, guid: d012f0b7c76483442b919bbd059cd922, type: 3}
+  - LidarPrefab: {fileID: 773861078808927764, guid: d7ba18bcf853116459c3becb08f01c65, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
