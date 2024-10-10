@@ -1,0 +1,124 @@
+Excavator:
+  - id: excavator1
+    name: Excavator_with_sensors_1
+    type: excavator
+    offset: 
+      x: 1
+      y: 1
+      z: 1
+    rotation: 
+      x: 0
+      y: 0
+      z: 0
+    sensors:
+      - id: Chasis_IMU
+        type: IMU
+        topic: /imu_chasis
+        # unit: radians
+        location: CHASIS
+        offset: 
+          x: 0.3436
+          y: 0.15
+          z: -0.2921
+        rotation: 
+          x: 0
+          y: -90
+          z: 90
+
+      - id: Chasis_LIDAR
+        type: LIDAR
+        topic: /lidar_chasis
+        # unit: radians
+        location: CHASIS
+        offset: 
+          x: 0
+          y: 0.745
+          z: -1.125
+        rotation: 
+          x: 0
+          y: 0
+          z: 0
+
+      - id: Boom_IMU
+        type: IMU
+        topic: /imu_boom
+        # unit: point_cloud
+        location: BOOM
+        offset: 
+          x: -0.06
+          y: 1
+          z: 0.1
+        rotation: 
+          x: 0
+          y: 0
+          z: -90
+
+      - id: Arm_IMU
+        type: IMU
+        topic: /imu_arm
+        # unit: meters
+        location: ARM
+        offset: 
+          x: -0.1364
+          y: -0.1887
+          z: 0.07
+        rotation: 
+          x: 0
+          y: 0
+          z: -90
+      
+      - id: Bucket_IMU
+        type: IMU
+        topic: /imu_bucket
+        # unit: meters
+        location: BUCKET
+        offset: 
+          x: -0.13462
+          y: 0
+          z: 0.153
+        rotation: 
+          x: 0
+          y: 0
+          z: 180
+      
+      - id: GPS
+        type: GPS
+        # unit: meters
+        topic: /gps_chasis
+        location: CHASIS
+        offset: 
+          x: 0
+          y: 0
+          z: 0
+        rotation: 
+          x: 0
+          y: 0
+          z: 0
+      
+      - id: RGB_CAMERA
+        type: RGB_CAMERA
+        topic: /camera_chasis
+        # unit: image
+        location: CHASIS
+        offset: 
+          x: 0
+          y: 0
+          z: 0
+        rotation: 
+          x: 0
+          y: 0
+          z: 0
+      
+      - id: RGBD_CAMERA
+        type: RGBD_CAMERA
+        topic: /rgbd_camera_chasis
+        # unit: image
+        location: CHASIS
+        offset: 
+          x: 0
+          y: 0
+          z: 0
+        rotation: 
+          x: 0
+          y: 0
+          z: 0

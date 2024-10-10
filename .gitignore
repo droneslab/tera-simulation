@@ -4,6 +4,7 @@
 *.asset
 
 # Ignore Directory
+Unity/Excavator/Assets/YamlDotNet/
 Unity/Excavator/Logs/
 Unity/Excavator/Library/
 #Unity/Excavator/Assets/AGXUnity
