@@ -188,6 +188,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8599625291737728535}
     m_Modifications:
+    - target: {fileID: 400355284960637820, guid: f2c0a77bc25e34f99b849e6d2e10818b, type: 3}
+      propertyPath: m_centerOfMassOffset.m_defaultValue.x
+      value: -0.10867026
+      objectReference: {fileID: 0}
+    - target: {fileID: 400355284960637820, guid: f2c0a77bc25e34f99b849e6d2e10818b, type: 3}
+      propertyPath: m_centerOfMassOffset.m_defaultValue.z
+      value: -0.055167135
+      objectReference: {fileID: 0}
     - target: {fileID: 832655251689172889, guid: f2c0a77bc25e34f99b849e6d2e10818b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.40055403
@@ -231,6 +239,58 @@ PrefabInstance:
     - target: {fileID: 5623524083527036861, guid: f2c0a77bc25e34f99b849e6d2e10818b, type: 3}
       propertyPath: m_Name
       value: onshape
+      objectReference: {fileID: 0}
+    - target: {fileID: 6109655818681428765, guid: f2c0a77bc25e34f99b849e6d2e10818b, type: 3}
+      propertyPath: m_enable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6109655818681428765, guid: f2c0a77bc25e34f99b849e6d2e10818b, type: 3}
+      propertyPath: m_range.Max
+      value: 1.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 6109655818681428765, guid: f2c0a77bc25e34f99b849e6d2e10818b, type: 3}
+      propertyPath: m_range.Min
+      value: -1.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 6754957275835885779, guid: f2c0a77bc25e34f99b849e6d2e10818b, type: 3}
+      propertyPath: m_enable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6754957275835885779, guid: f2c0a77bc25e34f99b849e6d2e10818b, type: 3}
+      propertyPath: m_range.Max
+      value: 0.872665
+      objectReference: {fileID: 0}
+    - target: {fileID: 6754957275835885779, guid: f2c0a77bc25e34f99b849e6d2e10818b, type: 3}
+      propertyPath: m_range.Min
+      value: -1.82173
+      objectReference: {fileID: 0}
+    - target: {fileID: 7130352059710519840, guid: f2c0a77bc25e34f99b849e6d2e10818b, type: 3}
+      propertyPath: m_enable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7130352059710519840, guid: f2c0a77bc25e34f99b849e6d2e10818b, type: 3}
+      propertyPath: m_range.Max
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7130352059710519840, guid: f2c0a77bc25e34f99b849e6d2e10818b, type: 3}
+      propertyPath: m_range.Min
+      value: -0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7638151736688833595, guid: f2c0a77bc25e34f99b849e6d2e10818b, type: 3}
+      propertyPath: m_enable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7638151736688833595, guid: f2c0a77bc25e34f99b849e6d2e10818b, type: 3}
+      propertyPath: m_range.Max
+      value: 1.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7638151736688833595, guid: f2c0a77bc25e34f99b849e6d2e10818b, type: 3}
+      propertyPath: m_range.Min
+      value: -0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7740732156365378598, guid: f2c0a77bc25e34f99b849e6d2e10818b, type: 3}
+      propertyPath: m_centerOfMassOffset.m_defaultValue.x
+      value: 0.14702487
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

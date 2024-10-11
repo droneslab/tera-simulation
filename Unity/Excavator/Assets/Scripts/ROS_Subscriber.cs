@@ -18,14 +18,14 @@ public class ExcavatorROSSubscriber : MonoBehaviour
 
     void OnExcavatorCommandReceived(ExcavatorCommandMsg commandMessage)
     {
-        Debug.Log(excavatorScript);
+        // Debug.Log(excavatorScript);
         if (excavatorScript != null)
         {
-            Debug.Log(commandMessage);
-            float result = lookupOperation.dictionary["mbucketcmd"](commandMessage.mbucketcmd);
-            Debug.Log(result);
+            // Debug.Log(commandMessage);
+            // float result = lookupOperation.dictionary["mbucketcmd"](commandMessage.mbucketcmd);
+            // Debug.Log(result);
             excavatorScript.MoveExcavatorTracks(commandMessage.mlefttravelcmd, commandMessage.mrighttravelcmd);
-            excavatorScript.MoveExcavatorArm(commandMessage.mslewcmd, commandMessage.mboomcmd, commandMessage.marmcmd, result);
+            excavatorScript.MoveExcavatorArm(commandMessage.mslewcmd, commandMessage.mboomcmd, commandMessage.marmcmd, commandMessage.mbucketcmd);
         }
     }
 }
