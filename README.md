@@ -28,7 +28,7 @@ Ensure you have the following software installed:
 ## Installation
 
 ### 1. Clone Repository
-First, clone the repository to your local machine. Ensure Git LFS is set up before cloning to manage large files.
+First, clone the repository to your local machine.
 
 ```bash
 git clone https://github.com/droneslab/moog-simulation.git
@@ -41,16 +41,9 @@ cd moog-simulation
 1. Open the project in Unity:
    - Open Unity Hub and click on "Add."
    - Select the `Unity/Excavator` folder from the cloned repository.
-   - In Unity, navigate to the `Unity/Excavator/Assets/` directory in the Project window locate the main scene named `Excavator_Sim.unity` for simulating the excavator.
+   - In Unity, navigate to the `Unity/Excavator/Assets/Scenes` directory in the Project window locate the scenes for simulating different environments.
 
 2. Ensure that the AGX Dynamics for Unity plugin downloaded earlier is installed by going to the menu bar and selecting **Assets -> Import Package -> Custom Package**.
-
-#### Setting Up Unity Packages
-1. In the Unity menu bar, go to **Window -> Package Manager**, click the **+** icon, and select **Add package from git URL...**. Enter the following URLs (One at a time):  
-   - [https://github.com/Unity-Technologies/ROS-TCP-Connector?path=/com.unity.robotics.ros-tcp-connector](https://github.com/Unity-Technologies/ROS-TCP-Connector?path=/com.unity.robotics.ros-tcp-connector)
-   - [https://github.com/Field-Robotics-Japan/UnitySensors.git?path=/Assets/UnitySensors#v2.0.4](https://github.com/Field-Robotics-Japan/UnitySensors.git?path=/Assets/UnitySensors#v2.0.4)
-   - [https://github.com/Field-Robotics-Japan/UnitySensors.git?path=/Assets/UnitySensorsROS#v2.0.4](https://github.com/Field-Robotics-Japan/UnitySensors.git?path=/Assets/UnitySensorsROS#v2.0.4)
-3. In the Unity menu bar, go to **Window -> Package Manager**, click the **+** icon, and select **Add package by name**. Enter the following name **com.unity.asset-manager-for-unity**. Select **Add**.
 
 ### Import Assets
 1. In the Unity menu bar, go to **Window -> Asset Manager**
@@ -62,6 +55,10 @@ cd moog-simulation
 1. After the packages are installed, the **Robotics** option will appear in the Unity menu bar and Open it to configure ROS settings and ROS Messages.
    ![image](https://github.com/user-attachments/assets/038e8f9d-c628-41d0-bf91-d7e2ec2cbbc7)
 2. Generate Custom ROSMessages inside Unity by specifying the path to Deltcan package folder from the cloned repository.
+
+### AGX Setup
+1. Activate AGX License using AGX License Manager in AGXUnity Menu Bar by providing License ID and Activation Code. This will create `agx.lfc` License file which can be used for other projects.
+2. AGX Troubleshooting - **AGXUnity -> Utils -> Update Cleanup**
 
 ### ROS2 Setup
 
