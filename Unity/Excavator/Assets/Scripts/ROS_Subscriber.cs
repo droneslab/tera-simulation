@@ -22,10 +22,13 @@ public class ExcavatorROSSubscriber : MonoBehaviour
         if (excavatorScript != null)
         {
             // Debug.Log(commandMessage);
-            // float result = lookupOperation.dictionary["mbucketcmd"](commandMessage.mbucketcmd);
+            float bucketCommand = lookupOperation.dictionary["mbucketcmd"](commandMessage.mbucketcmd);
+            float armCommand = lookupOperation.dictionary["marmcmd"](commandMessage.marmcmd);
+            float boomCommand = lookupOperation.dictionary["mboomcmd"](commandMessage.mboomcmd);
+
             // Debug.Log(result);
             excavatorScript.MoveExcavatorTracks(commandMessage.mlefttravelcmd, commandMessage.mrighttravelcmd);
-            excavatorScript.MoveExcavatorArm(commandMessage.mslewcmd, commandMessage.mboomcmd, commandMessage.marmcmd, commandMessage.mbucketcmd);
+            excavatorScript.MoveExcavatorArm(commandMessage.mslewcmd, boomCommand, armCommand, bucketCommand);
         }
     }
 }

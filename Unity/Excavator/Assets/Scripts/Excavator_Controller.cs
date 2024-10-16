@@ -131,7 +131,7 @@ public class ExcavatorScript : MonoBehaviour
         HandleArmMovement();
 
         // Log the forces and torques applied to the arm parts
-        // LogArmForces();
+        LogArmForces();
     }
 
     void HandleArmMovement()
