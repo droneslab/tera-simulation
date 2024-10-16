@@ -11,4 +11,6 @@ Unity/Excavator/Library/
 sim_ws/build/
 sim_ws/install/
 sim_ws/log/
-
+Unity/Excavator/Assets/agx.lfx
+Unity/Excavator/Assets/agx.lfx.meta
+sim_ws/*.vscode
