@@ -47,7 +47,7 @@ public class ExcavatorList
     public List<Excavator> Excavator { get; set; }
 }
 
-public class Import_Sensor_Config : MonoBehaviour
+public class Excavator_Configurator : MonoBehaviour
 {
     public GameObject excavatorPrefab;
     public GameObject IMUPrefab;
