@@ -14,6 +14,13 @@ public class gt_handler : MonoBehaviour
     float bucket_angle;
     float bucket_angular_velocity;
 
+    float prev_cabin_angle;
+    float prev_boom_angle;
+    float prev_arm_angle;
+    float prev_bucket_angle;
+
+    bool prev_set = false;
+
     public GameObject cabin_link;
     public GameObject boom_link;
     public GameObject arm_link;
@@ -44,7 +51,7 @@ public class gt_handler : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
       
         // get the transform of the game objects
@@ -62,10 +69,38 @@ public class gt_handler : MonoBehaviour
         arm_angle = arm_transform.rotation.eulerAngles.z;
         bucket_angle = bucket_transform.rotation.eulerAngles.z;
 
-        // float temp_cabin = cabin_angle;
-        // float temp_boom = boom_angle;
-        // float temp_arm = arm_angle;
-        // float temp_bucket = bucket_angle;
+        if(!prev_set)
+        {
+            prev_cabin_angle = cabin_angle;
+            prev_boom_angle = boom_angle;
+            prev_arm_angle = arm_angle;
+            prev_bucket_angle = bucket_angle;
+
+            cabin_angular_velocity = 0.0f;
+            boom_angular_velocity = 0.0f;
+            arm_angular_velocity = 0.0f;
+            bucket_angular_velocity = 0.0f;
+
+            prev_set = true;
+            return;
+        }
+        else{
+            cabin_angular_velocity = cabin_angle - prev_cabin_angle;
+            boom_angular_velocity = boom_angle - prev_boom_angle;
+            arm_angular_velocity = arm_angle - prev_arm_angle;
+            bucket_angular_velocity = bucket_angle - prev_bucket_angle;
+
+            cabin_angular_velocity = cabin_angular_velocity / Time.deltaTime;
+            boom_angular_velocity = boom_angular_velocity / Time.deltaTime;
+            arm_angular_velocity = arm_angular_velocity / Time.deltaTime;
+            bucket_angular_velocity = bucket_angular_velocity / Time.deltaTime;
+
+            prev_cabin_angle = cabin_angle;
+            prev_boom_angle = boom_angle;
+            prev_arm_angle = arm_angle;
+            prev_bucket_angle = bucket_angle;
+
+        }
 
         if(cabin_angle > 180)
         {
@@ -92,7 +127,8 @@ public class gt_handler : MonoBehaviour
         arm_angle = arm_angle - boom_angle;
         boom_angle = boom_angle - cabin_angle;
 
-        Debug.Log($"Cabin: {cabin_angle}, Boom: {boom_angle}, Arm: {arm_angle}, Bucket: {bucket_angle}");
+        // Debug.Log($"Cabin: {cabin_angle}, Boom: {boom_angle}, Arm: {arm_angle}, Bucket: {bucket_angle}");
+        Debug.Log($"Cabin Angular Velocity: {cabin_angular_velocity}, Boom Angular Velocity: {boom_angular_velocity}, Arm Angular Velocity: {arm_angular_velocity}, Bucket Angular Velocity: {bucket_angular_velocity}");
         
     }
 
