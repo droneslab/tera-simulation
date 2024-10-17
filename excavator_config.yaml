@@ -16,6 +16,9 @@ Excavator:
         topic: /imu_chasis
         # unit: radians
         location: CHASIS
+        noise:
+          mean: 0.1
+          std_dev: 0.01
         offset: 
           x: 0.3436
           y: 0.15
@@ -30,6 +33,9 @@ Excavator:
         topic: /lidar_chasis
         # unit: radians
         location: CHASIS
+        noise:
+          mean: 0.1
+          std_dev: 0.01
         offset: 
           x: 0
           y: 0.745
@@ -42,22 +48,23 @@ Excavator:
       - id: Boom_IMU
         type: IMU
         topic: /imu_boom
-        # unit: point_cloud
         location: BOOM
-        offset: 
+        noise:
+          mean: 0.1
+          std_dev: 0.01
+        offset:
           x: -0.06
           y: 1
           z: 0.1
-        rotation: 
-          x: 0
-          y: 0
-          z: -90
-
+      
       - id: Arm_IMU
         type: IMU
         topic: /imu_arm
         # unit: meters
         location: ARM
+        noise:
+          mean: 0.1
+          std_dev: 0.01
         offset: 
           x: -0.1364
           y: -0.1887
@@ -66,12 +73,15 @@ Excavator:
           x: 0
           y: 0
           z: -90
-      
+
       - id: Bucket_IMU
         type: IMU
         topic: /imu_bucket
         # unit: meters
         location: BUCKET
+        noise:
+          mean: 0.1
+          std_dev: 0.01
         offset: 
           x: -0.13462
           y: 0

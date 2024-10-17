@@ -24,6 +24,8 @@ public class Ground_Truth_Publisher : MonoBehaviour
     float bucket_angular_velocity;
     void Start()
     {
+        ros = ROSConnection.instance;
+        ros.RegisterPublisher<JointStateMsg>(topicName);
         gtHandler = gtHandlerObject.GetComponent<gt_handler>();
         cabin_angle = gtHandler.cabin_angle;
         cabin_angular_velocity = gtHandler.cabin_angular_velocity;

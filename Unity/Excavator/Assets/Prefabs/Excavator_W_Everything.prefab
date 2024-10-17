@@ -1267,19 +1267,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_mass:
     m_defaultToggle: 0
-    m_defaultValue: 0.71507406
+    m_defaultValue: 0.7150744
     m_userValue: 5
   m_inertiaDiagonal:
     m_defaultToggle: 0
-    m_defaultValue: {x: 0.009867314, y: 0.009867314, z: 0.0055611786}
+    m_defaultValue: {x: 0.009867314, y: 0.009867316, z: 0.005561181}
     m_userValue: {x: 5, y: 5, z: 5}
   m_inertiaOffDiagonal:
     m_defaultToggle: 0
-    m_defaultValue: {x: -1.1975859e-10, y: 9.493811e-10, z: 1.4474515e-10}
+    m_defaultValue: {x: -8.0093016e-11, y: 2.1662568e-10, z: 3.7073622e-10}
     m_userValue: {x: 0, y: 0, z: 0}
   m_centerOfMassOffset:
     m_defaultToggle: 0
-    m_defaultValue: {x: 0.000000008939588, y: -0.00000005984529, z: -0.0847553}
+    m_defaultValue: {x: 6.442691e-10, y: -2.148871e-10, z: -0.0847553}
     m_userValue: {x: -0, y: 0, z: 0}
   m_massCoefficients: {x: 0, y: 0, z: 0}
   m_inertiaCoefficients: {x: 0, y: 0, z: 0}
@@ -2467,19 +2467,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_mass:
     m_defaultToggle: 0
-    m_defaultValue: 4.5810256
+    m_defaultValue: 4.581028
     m_userValue: 35.98629
   m_inertiaDiagonal:
     m_defaultToggle: 0
-    m_defaultValue: {x: 0.20068313, y: 0.20062791, z: 0.2932835}
+    m_defaultValue: {x: 0.20068325, y: 0.20062792, z: 0.29328364}
     m_userValue: {x: 0.20071737, y: 0.20066206, z: 0.29333574}
   m_inertiaOffDiagonal:
     m_defaultToggle: 0
-    m_defaultValue: {x: -0.0000000028051665, y: 0.000079667574, z: 0.000000004786811}
+    m_defaultValue: {x: -6.4929384e-10, y: 0.000079669735, z: 0.0000000067495143}
     m_userValue: {x: 2.1151248e-17, y: 0.000079696045, z: 2.9552995e-16}
   m_centerOfMassOffset:
     m_defaultToggle: 0
-    m_defaultValue: {x: -0.000027913982, y: 7.387207e-10, z: -0.047012694}
+    m_defaultValue: {x: -0.000027913778, y: 0.0000000013481524, z: -0.04701257}
     m_userValue: {x: -0.000027929495, y: -2.4241831e-16, z: -0.04703082}
   m_massCoefficients: {x: 0, y: 0, z: 0}
   m_inertiaCoefficients: {x: 0, y: 0, z: 0}
@@ -2585,19 +2585,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_mass:
     m_defaultToggle: 0
-    m_defaultValue: 0.71507406
+    m_defaultValue: 0.7150745
     m_userValue: 5
   m_inertiaDiagonal:
     m_defaultToggle: 0
-    m_defaultValue: {x: 0.009867315, y: 0.009867315, z: 0.005561179}
+    m_defaultValue: {x: 0.009867314, y: 0.009867316, z: 0.0055611813}
     m_userValue: {x: 5, y: 5, z: 5}
   m_inertiaOffDiagonal:
     m_defaultToggle: 0
-    m_defaultValue: {x: 2.8780638e-11, y: -6.0951927e-10, z: -6.6265443e-10}
+    m_defaultValue: {x: -6.634443e-10, y: -1.1292623e-10, z: -4.718354e-10}
     m_userValue: {x: 0, y: 0, z: 0}
   m_centerOfMassOffset:
     m_defaultToggle: 0
-    m_defaultValue: {x: -0.0000000064358745, y: 3.9549122e-10, z: -0.08324462}
+    m_defaultValue: {x: 4.3340984e-10, y: -6.2786093e-10, z: -0.08324456}
     m_userValue: {x: -0, y: 0, z: 0}
   m_massCoefficients: {x: 0, y: 0, z: 0}
   m_inertiaCoefficients: {x: 0, y: 0, z: 0}
@@ -2702,19 +2702,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_mass:
     m_defaultToggle: 0
-    m_defaultValue: 1
+    m_defaultValue: 18.732002
     m_userValue: 147.01808
   m_inertiaDiagonal:
     m_defaultToggle: 0
-    m_defaultValue: {x: 21614.316, y: 21614.316, z: 21614.316}
+    m_defaultValue: {x: 31.892117, y: 21.20595, z: 13.170151}
     m_userValue: {x: 31.881096, y: 21.19622, z: 13.169228}
   m_inertiaOffDiagonal:
     m_defaultToggle: 0
-    m_defaultValue: {x: 1, y: 1, z: 1}
+    m_defaultValue: {x: 0.91169715, y: -0.0000019741476, z: 0.0000057407806}
     m_userValue: {x: 0.91247386, y: -0.00001621209, z: 0.000004990008}
   m_centerOfMassOffset:
     m_defaultToggle: 0
-    m_defaultValue: {x: 0, y: 0, z: 0}
+    m_defaultValue: {x: 0.10968671, y: 0.88090813, z: -0.2549999}
     m_userValue: {x: 0.109704934, y: 0.88075066, z: -0.25500032}
   m_massCoefficients: {x: 0, y: 0, z: 0}
   m_inertiaCoefficients: {x: 0, y: 0, z: 0}
@@ -3404,19 +3404,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_mass:
     m_defaultToggle: 0
-    m_defaultValue: 2.245363
+    m_defaultValue: 2.245364
     m_userValue: 17.646736
   m_inertiaDiagonal:
     m_defaultToggle: 0
-    m_defaultValue: {x: 0.15287685, y: 0.15287693, z: 0.29923487}
+    m_defaultValue: {x: 0.15287697, y: 0.15287693, z: 0.299235}
     m_userValue: {x: 0.15307832, y: 0.15307832, z: 0.29963756}
   m_inertiaOffDiagonal:
     m_defaultToggle: 0
-    m_defaultValue: {x: -0.000000009207086, y: 0.0000000029069271, z: 0.0000000034297967}
+    m_defaultValue: {x: -0.0000000058973413, y: 0.0000000041796535, z: 0.0000000037934638}
     m_userValue: {x: 1.0629206e-17, y: 2.6922496e-17, z: 6.974756e-33}
   m_centerOfMassOffset:
     m_defaultToggle: 0
-    m_defaultValue: {x: 2.0363627e-11, y: 5.832181e-11, z: -0.03250003}
+    m_defaultValue: {x: -9.508468e-11, y: 6.460945e-11, z: -0.03250003}
     m_userValue: {x: -8.8810213e-17, y: -1.1262368e-16, z: -0.0325}
   m_massCoefficients: {x: 0, y: 0, z: 0}
   m_inertiaCoefficients: {x: 0, y: 0, z: 0}
@@ -3525,19 +3525,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_mass:
     m_defaultToggle: 0
-    m_defaultValue: 1236.2544
+    m_defaultValue: 1236.2539
     m_userValue: 9732.804
   m_inertiaDiagonal:
     m_defaultToggle: 0
-    m_defaultValue: {x: 3169.5608, y: 2625.8523, z: 3736.36}
+    m_defaultValue: {x: 3169.561, y: 2625.853, z: 3736.3584}
     m_userValue: {x: 3175.1655, y: 2627.6328, z: 3742.616}
   m_inertiaOffDiagonal:
     m_defaultToggle: 0
-    m_defaultValue: {x: -268.50995, y: 167.67369, z: -194.97543}
+    m_defaultValue: {x: -268.50983, y: 167.67326, z: -194.97534}
     m_userValue: {x: -269.9731, y: 167.6178, z: -193.85495}
   m_centerOfMassOffset:
     m_defaultToggle: 0
-    m_defaultValue: {x: 0.14702508, y: 0.44001266, z: 0.4508889}
+    m_defaultValue: {x: 0.14702466, y: 0.44001284, z: 0.450889}
     m_userValue: {x: 0.1468726, y: 0.4411572, z: 0.45091674}
   m_massCoefficients: {x: 0, y: 0, z: 0}
   m_inertiaCoefficients: {x: 0, y: 0, z: 0}
@@ -3700,19 +3700,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_mass:
     m_defaultToggle: 0
-    m_defaultValue: 12.499295
+    m_defaultValue: 12.4992895
     m_userValue: 98.14019
   m_inertiaDiagonal:
     m_defaultToggle: 0
-    m_defaultValue: {x: 2.6080968, y: 3.1656175, z: 1.7882991}
+    m_defaultValue: {x: 2.6080964, y: 3.165617, z: 1.7882982}
     m_userValue: {x: 2.608578, y: 3.1665232, z: 1.7889951}
   m_inertiaOffDiagonal:
     m_defaultToggle: 0
-    m_defaultValue: {x: 0.04004383, y: 0.4209524, z: -0.15911943}
+    m_defaultValue: {x: 0.04004373, y: 0.4209524, z: -0.1591194}
     m_userValue: {x: 0.0402273, y: 0.42136782, z: -0.15916377}
   m_centerOfMassOffset:
     m_defaultToggle: 0
-    m_defaultValue: {x: 0.026003554, y: 0.1067066, z: 0.09754615}
+    m_defaultValue: {x: 0.026003504, y: 0.10670623, z: 0.097546175}
     m_userValue: {x: 0.02603031, y: 0.106722884, z: 0.09755385}
   m_massCoefficients: {x: 0, y: 0, z: 0}
   m_inertiaCoefficients: {x: 0, y: 0, z: 0}
@@ -4090,19 +4090,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_mass:
     m_defaultToggle: 0
-    m_defaultValue: 0.71507406
+    m_defaultValue: 0.7150744
     m_userValue: 5
   m_inertiaDiagonal:
     m_defaultToggle: 0
-    m_defaultValue: {x: 0.009867314, y: 0.009867314, z: 0.0055611786}
+    m_defaultValue: {x: 0.009867314, y: 0.009867316, z: 0.005561181}
     m_userValue: {x: 5, y: 5, z: 5}
   m_inertiaOffDiagonal:
     m_defaultToggle: 0
-    m_defaultValue: {x: -1.1975859e-10, y: 9.493811e-10, z: 1.4474515e-10}
+    m_defaultValue: {x: -8.0093016e-11, y: 2.1662568e-10, z: 3.7073622e-10}
     m_userValue: {x: 0, y: 0, z: 0}
   m_centerOfMassOffset:
     m_defaultToggle: 0
-    m_defaultValue: {x: 0.000000008939588, y: -2.406491e-10, z: -0.0847553}
+    m_defaultValue: {x: 6.442692e-10, y: -2.148871e-10, z: -0.0847553}
     m_userValue: {x: -0, y: 0, z: 0}
   m_massCoefficients: {x: 0, y: 0, z: 0}
   m_inertiaCoefficients: {x: 0, y: 0, z: 0}
@@ -4330,19 +4330,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_mass:
     m_defaultToggle: 0
-    m_defaultValue: 58.464798
+    m_defaultValue: 58.464775
     m_userValue: 459.11707
   m_inertiaDiagonal:
     m_defaultToggle: 0
-    m_defaultValue: {x: 103.53331, y: 71.554306, z: 164.71452}
+    m_defaultValue: {x: 103.53326, y: 71.55427, z: 164.71445}
     m_userValue: {x: 103.54309, y: 71.550385, z: 164.71779}
   m_inertiaOffDiagonal:
     m_defaultToggle: 0
-    m_defaultValue: {x: 2.8657882, y: -0.2689006, z: -8.786659}
+    m_defaultValue: {x: 2.8657756, y: -0.26890114, z: -8.786656}
     m_userValue: {x: 2.8689911, y: -0.269186, z: -8.788175}
   m_centerOfMassOffset:
     m_defaultToggle: 0
-    m_defaultValue: {x: 0.0067578987, y: -0.1254736, z: -0.18651009}
+    m_defaultValue: {x: 0.006757895, y: -0.12547354, z: -0.1865101}
     m_userValue: {x: 0.006764113, y: -0.12553014, z: -0.18649077}
   m_massCoefficients: {x: 0, y: 0, z: 0}
   m_inertiaCoefficients: {x: 0, y: 0, z: 0}
@@ -5465,19 +5465,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_mass:
     m_defaultToggle: 0
-    m_defaultValue: 0.6292435
+    m_defaultValue: 0.6292438
     m_userValue: 4.863933
   m_inertiaDiagonal:
     m_defaultToggle: 0
-    m_defaultValue: {x: 0.01160993, y: 0.01160993, z: 0.003234472}
+    m_defaultValue: {x: 0.011609929, y: 0.011609931, z: 0.0032344735}
     m_userValue: {x: 0.011612002, y: 0.011612002, z: 0.0032385818}
   m_inertiaOffDiagonal:
     m_defaultToggle: 0
-    m_defaultValue: {x: -1.3482722e-10, y: -3.1867708e-10, z: 0.000000002056346}
+    m_defaultValue: {x: -2.9851593e-10, y: 1.8415866e-10, z: 0.0000000016498397}
     m_userValue: {x: -4.858707e-20, y: 1.5384638e-34, z: -3.651206e-33}
   m_centerOfMassOffset:
     m_defaultToggle: 0
-    m_defaultValue: {x: 0.0000000011121712, y: 0.00000001846437, z: -0.08216346}
+    m_defaultValue: {x: -0.0000000041282044, y: 0.0000000141491645, z: -0.08216346}
     m_userValue: {x: 6.0056394e-18, y: -2.7755576e-17, z: -0.082163535}
   m_massCoefficients: {x: 0, y: 0, z: 0}
   m_inertiaCoefficients: {x: 0, y: 0, z: 0}
@@ -7279,6 +7279,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2c4ede550147bf2c8d8542255a231e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cabin_angle: 0
+  cabin_angular_velocity: 0
+  boom_angle: 0
+  boom_angular_velocity: 0
+  arm_angle: 0
+  arm_angular_velocity: 0
+  bucket_angle: 0
+  bucket_angular_velocity: 0
   cabin_link: {fileID: 2906234444989149376}
   boom_link: {fileID: 944423283514742766}
   arm_link: {fileID: 9165001403069024454}
@@ -7334,19 +7342,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_mass:
     m_defaultToggle: 0
-    m_defaultValue: 0.62924343
+    m_defaultValue: 0.62924373
     m_userValue: 4.863933
   m_inertiaDiagonal:
     m_defaultToggle: 0
-    m_defaultValue: {x: 0.011609929, y: 0.011609929, z: 0.0032344714}
+    m_defaultValue: {x: 0.01160993, y: 0.011609931, z: 0.0032344733}
     m_userValue: {x: 0.011612002, y: 0.011612002, z: 0.0032385818}
   m_inertiaOffDiagonal:
     m_defaultToggle: 0
-    m_defaultValue: {x: -7.177586e-12, y: -7.995298e-11, z: 6.6628286e-10}
+    m_defaultValue: {x: 5.1210095e-12, y: -3.167536e-10, z: 5.5701266e-10}
     m_userValue: {x: 0, y: 7.630581e-34, z: 0}
   m_centerOfMassOffset:
     m_defaultToggle: 0
-    m_defaultValue: {x: 0.0000000021387212, y: 0.000000007326311, z: -0.08216346}
+    m_defaultValue: {x: 0.0000000034406444, y: 0.000000006136629, z: -0.08216346}
     m_userValue: {x: 7.1225876e-18, y: 2.0661882e-35, z: -0.082163535}
   m_massCoefficients: {x: 0, y: 0, z: 0}
   m_inertiaCoefficients: {x: 0, y: 0, z: 0}
@@ -7849,19 +7857,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_mass:
     m_defaultToggle: 0
-    m_defaultValue: 16.907923
+    m_defaultValue: 16.907928
     m_userValue: 132.70766
   m_inertiaDiagonal:
     m_defaultToggle: 0
-    m_defaultValue: {x: 14.041008, y: 6.8551016, z: 11.613211}
+    m_defaultValue: {x: 14.041001, y: 6.8550997, z: 11.613207}
     m_userValue: {x: 14.035672, y: 6.854973, z: 11.610921}
   m_inertiaOffDiagonal:
     m_defaultToggle: 0
-    m_defaultValue: {x: -1.6634505, y: 0.0020385636, z: 0.0040317215}
+    m_defaultValue: {x: -1.6634523, y: 0.0020393375, z: 0.004036058}
     m_userValue: {x: -1.665244, y: 0.0020270508, z: 0.0040437123}
   m_centerOfMassOffset:
     m_defaultToggle: 0
-    m_defaultValue: {x: -0.21352653, y: 0.42624462, z: 0.055070642}
+    m_defaultValue: {x: -0.21352662, y: 0.4262447, z: 0.05507056}
     m_userValue: {x: -0.21363778, y: 0.42618057, z: 0.0550715}
   m_massCoefficients: {x: 0, y: 0, z: 0}
   m_inertiaCoefficients: {x: 0, y: 0, z: 0}
@@ -8065,19 +8073,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_mass:
     m_defaultToggle: 0
-    m_defaultValue: 9.265715
+    m_defaultValue: 9.26571
     m_userValue: 72.8276
   m_inertiaDiagonal:
     m_defaultToggle: 0
-    m_defaultValue: {x: 1.0982878, y: 1.0982878, z: 2.163243}
+    m_defaultValue: {x: 1.0982872, y: 1.0982872, z: 2.163242}
     m_userValue: {x: 1.0996534, y: 1.0996534, z: 2.1659744}
   m_inertiaOffDiagonal:
     m_defaultToggle: 0
-    m_defaultValue: {x: -0.000000007395553, y: -0.000000007507583, z: -0.000000012456874}
+    m_defaultValue: {x: -0.0000000050351905, y: -0.000000008453184, z: -0.000000007719324}
     m_userValue: {x: -2.7108604e-32, y: 0, z: 0}
   m_centerOfMassOffset:
     m_defaultToggle: 0
-    m_defaultValue: {x: 0.25, y: -0.00000003414863, z: -0.024479473}
+    m_defaultValue: {x: 0.25000012, y: -0.0000002382086, z: -0.024479473}
     m_userValue: {x: 0.25, y: -2.605478e-15, z: -0.024479607}
   m_massCoefficients: {x: 0, y: 0, z: 0}
   m_inertiaCoefficients: {x: 0, y: 0, z: 0}
@@ -10010,19 +10018,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_mass:
     m_defaultToggle: 0
-    m_defaultValue: 0.7150743
+    m_defaultValue: 0.71507466
     m_userValue: 5
   m_inertiaDiagonal:
     m_defaultToggle: 0
-    m_defaultValue: {x: 0.009867315, y: 0.009867315, z: 0.00556118}
+    m_defaultValue: {x: 0.009867314, y: 0.009867317, z: 0.0055611827}
     m_userValue: {x: 5, y: 5, z: 5}
   m_inertiaOffDiagonal:
     m_defaultToggle: 0
-    m_defaultValue: {x: 8.380537e-11, y: -7.736051e-10, z: -6.482265e-10}
+    m_defaultValue: {x: 4.447859e-10, y: -5.4766786e-10, z: -4.6408952e-10}
     m_userValue: {x: 0, y: 0, z: 0}
   m_centerOfMassOffset:
     m_defaultToggle: 0
-    m_defaultValue: {x: -0.0000000057007994, y: -8.323506e-10, z: -0.08324468}
+    m_defaultValue: {x: 5.5900723e-10, y: -2.7891114e-10, z: -0.08324468}
     m_userValue: {x: -0, y: 0, z: 0}
   m_massCoefficients: {x: 0, y: 0, z: 0}
   m_inertiaCoefficients: {x: 0, y: 0, z: 0}
@@ -10128,19 +10136,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_mass:
     m_defaultToggle: 0
-    m_defaultValue: 0.71507406
+    m_defaultValue: 0.7150744
     m_userValue: 5
   m_inertiaDiagonal:
     m_defaultToggle: 0
-    m_defaultValue: {x: 0.009867314, y: 0.009867314, z: 0.0055611786}
+    m_defaultValue: {x: 0.009867314, y: 0.009867317, z: 0.005561181}
     m_userValue: {x: 5, y: 5, z: 5}
   m_inertiaOffDiagonal:
     m_defaultToggle: 0
-    m_defaultValue: {x: -9.4575764e-11, y: -9.547264e-10, z: -2.6690747e-10}
+    m_defaultValue: {x: -6.547842e-11, y: -1.9966138e-10, z: -3.5247372e-10}
     m_userValue: {x: 0, y: 0, z: 0}
   m_centerOfMassOffset:
     m_defaultToggle: 0
-    m_defaultValue: {x: -0.000000005840479, y: -4.709592e-10, z: -0.08324474}
+    m_defaultValue: {x: 6.420589e-10, y: -3.4412181e-10, z: -0.08324468}
     m_userValue: {x: -0, y: 0, z: 0}
   m_massCoefficients: {x: 0, y: 0, z: 0}
   m_inertiaCoefficients: {x: 0, y: 0, z: 0}
@@ -10353,19 +10361,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_mass:
     m_defaultToggle: 0
-    m_defaultValue: 88.42877
+    m_defaultValue: 88.42874
     m_userValue: 694.1779
   m_inertiaDiagonal:
     m_defaultToggle: 0
-    m_defaultValue: {x: 242.81981, y: 49.636574, z: 289.8395}
+    m_defaultValue: {x: 242.81976, y: 49.63655, z: 289.83942}
     m_userValue: {x: 242.81245, y: 49.641342, z: 289.83704}
   m_inertiaOffDiagonal:
     m_defaultToggle: 0
-    m_defaultValue: {x: 71.38087, y: 0.006578499, z: -0.034216747}
+    m_defaultValue: {x: 71.38084, y: 0.0065831975, z: -0.034224413}
     m_userValue: {x: 71.37094, y: 0.0065905643, z: -0.034260053}
   m_centerOfMassOffset:
     m_defaultToggle: 0
-    m_defaultValue: {x: 0.040132526, y: 1.2153624, z: -0.079873666}
+    m_defaultValue: {x: 0.040132362, y: 1.2153624, z: -0.0798735}
     m_userValue: {x: 0.040079404, y: 1.2153345, z: -0.07987342}
   m_massCoefficients: {x: 0, y: 0, z: 0}
   m_inertiaCoefficients: {x: 0, y: 0, z: 0}
@@ -11080,19 +11088,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_mass:
     m_defaultToggle: 0
-    m_defaultValue: 33.805912
+    m_defaultValue: 33.8059
     m_userValue: 265.3491
   m_inertiaDiagonal:
     m_defaultToggle: 0
-    m_defaultValue: {x: 57.595745, y: 1.8978641, z: 58.866203}
+    m_defaultValue: {x: 57.595757, y: 1.8978633, z: 58.866207}
     m_userValue: {x: 57.599133, y: 1.8968982, z: 58.86868}
   m_inertiaOffDiagonal:
     m_defaultToggle: 0
-    m_defaultValue: {x: 0.07758969, y: 0.0049754367, z: 0.024558932}
+    m_defaultValue: {x: 0.07758403, y: 0.004975373, z: 0.02455925}
     m_userValue: {x: 0.07844258, y: 0.004982629, z: 0.024599016}
   m_centerOfMassOffset:
     m_defaultToggle: 0
-    m_defaultValue: {x: -0.10867027, y: -0.60158336, z: -0.055167157}
+    m_defaultValue: {x: -0.10867018, y: -0.6015835, z: -0.05516716}
     m_userValue: {x: -0.10866227, y: -0.601648, z: -0.05516729}
   m_massCoefficients: {x: 0, y: 0, z: 0}
   m_inertiaCoefficients: {x: 0, y: 0, z: 0}
@@ -11179,19 +11187,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_mass:
     m_defaultToggle: 0
-    m_defaultValue: 2.245362
+    m_defaultValue: 2.245363
     m_userValue: 17.646736
   m_inertiaDiagonal:
     m_defaultToggle: 0
-    m_defaultValue: {x: 0.15287682, y: 0.15287684, z: 0.29923478}
+    m_defaultValue: {x: 0.15287685, y: 0.15287697, z: 0.29923493}
     m_userValue: {x: 0.15307832, y: 0.15307832, z: 0.29963756}
   m_inertiaOffDiagonal:
     m_defaultToggle: 0
-    m_defaultValue: {x: -0.000000009305476, y: 0.00000001790893, z: -0.00000000708424}
+    m_defaultValue: {x: -0.000000007762961, y: -0.000000003636582, z: -7.442324e-10}
     m_userValue: {x: -3.773672e-33, y: -2.6922496e-17, z: 0}
   m_centerOfMassOffset:
     m_defaultToggle: 0
-    m_defaultValue: {x: -0.0000000027662692, y: -1.2514446e-10, z: -0.03250003}
+    m_defaultValue: {x: 6.95885e-12, y: -3.0568503e-10, z: -0.03250003}
     m_userValue: {x: 2.2212087e-17, y: 1.6013804e-18, z: -0.0325}
   m_massCoefficients: {x: 0, y: 0, z: 0}
   m_inertiaCoefficients: {x: 0, y: 0, z: 0}
@@ -11891,6 +11899,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8599625291737728535}
+  - component: {fileID: 21184258988900091}
   m_Layer: 0
   m_Name: Excavator_W_Everything
   m_TagString: Untagged
@@ -11917,6 +11926,21 @@ Transform:
   - {fileID: 355110901757245359}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &21184258988900091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7210873327385068898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fa192bcfc479d4edbf8c99aa692af1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  topicName: ground_truth
+  publishMessageFrequency: 0.05
+  gtHandlerObject: {fileID: 4439950926713474922}
 --- !u!1 &7311164738092051300
 GameObject:
   m_ObjectHideFlags: 0
@@ -12029,19 +12053,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_mass:
     m_defaultToggle: 0
-    m_defaultValue: 4.5810256
+    m_defaultValue: 4.5810275
     m_userValue: 35.98629
   m_inertiaDiagonal:
     m_defaultToggle: 0
-    m_defaultValue: {x: 0.20068313, y: 0.20062791, z: 0.29328352}
+    m_defaultValue: {x: 0.20068328, y: 0.20062794, z: 0.29328367}
     m_userValue: {x: 0.20071737, y: 0.20066206, z: 0.29333574}
   m_inertiaOffDiagonal:
     m_defaultToggle: 0
-    m_defaultValue: {x: 0.000000003911629, y: 0.00007966536, z: -0.0000000011818431}
+    m_defaultValue: {x: 0.0000000029751053, y: 0.00007966823, z: -0.000000009004699}
     m_userValue: {x: 6.125058e-18, y: 0.000079696045, z: 2.9552543e-16}
   m_centerOfMassOffset:
     m_defaultToggle: 0
-    m_defaultValue: {x: -0.000027913575, y: -0.0000000027064728, z: -0.047012694}
+    m_defaultValue: {x: -0.000027913085, y: -1.2976827e-10, z: -0.04701281}
     m_userValue: {x: -0.000027929495, y: -2.2160321e-16, z: -0.04703082}
   m_massCoefficients: {x: 0, y: 0, z: 0}
   m_inertiaCoefficients: {x: 0, y: 0, z: 0}
@@ -13362,19 +13386,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_mass:
     m_defaultToggle: 0
-    m_defaultValue: 0.71507406
+    m_defaultValue: 0.7150744
     m_userValue: 5
   m_inertiaDiagonal:
     m_defaultToggle: 0
-    m_defaultValue: {x: 0.009867314, y: 0.009867314, z: 0.0055611786}
+    m_defaultValue: {x: 0.009867314, y: 0.009867316, z: 0.005561181}
     m_userValue: {x: 5, y: 5, z: 5}
   m_inertiaOffDiagonal:
     m_defaultToggle: 0
-    m_defaultValue: {x: -1.1975859e-10, y: 9.493811e-10, z: 1.4474515e-10}
+    m_defaultValue: {x: -8.0093016e-11, y: 2.1662568e-10, z: 3.7073622e-10}
     m_userValue: {x: 0, y: 0, z: 0}
   m_centerOfMassOffset:
     m_defaultToggle: 0
-    m_defaultValue: {x: -0.0000000059615735, y: 0.000000059363995, z: -0.0847553}
+    m_defaultValue: {x: 6.442692e-10, y: -2.148871e-10, z: -0.08475554}
     m_userValue: {x: -0, y: 0, z: 0}
   m_massCoefficients: {x: 0, y: 0, z: 0}
   m_inertiaCoefficients: {x: 0, y: 0, z: 0}

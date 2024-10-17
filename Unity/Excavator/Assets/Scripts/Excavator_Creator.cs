@@ -21,6 +21,12 @@ public class Rotation
     public double z { get; set; }
 }
 
+public class Noise
+{
+    public double mean { get; set; }
+    public double std_dev { get; set; }
+}
+
 public class Sensor
 {
     public string id { get; set; }
@@ -29,6 +35,7 @@ public class Sensor
     public string location { get; set; }
     public Offset offset { get; set; }
     public Rotation rotation { get; set; }
+    public Noise noise { get; set; }
     
 }
 
@@ -122,6 +129,7 @@ public class Excavator_Creator : MonoBehaviour
                     case "IMU":
                         sensorObject = Instantiate(IMUPrefab);
                         componentTransform = sensorObject.GetComponent("IMUMsgPublisher");
+                        // sensorObject.SetNoise(sensor.noise.mean, sensor.noise.std_dev);
                         break;
                     case "GPS":
                         sensorObject = Instantiate(GPSPrefab);

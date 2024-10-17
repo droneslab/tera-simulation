@@ -177,8 +177,8 @@ public class ExcavatorScript : MonoBehaviour
                 {
                     if (nativeConstraint.getLastForce(nativeConstraint.getBodyAt(0), ref rbf, ref rbt))
                     {
-                        Debug.Log($"Force on RigidBody1: ({rbf.x}, {rbf.y}, {rbf.z})");
-                        Debug.Log($"Torque on RigidBody1: ({rbt.x}, {rbt.y}, {rbt.z})");
+                        // Debug.Log($"Force on RigidBody1: ({rbf.x}, {rbf.y}, {rbf.z})");
+                        // Debug.Log($"Torque on RigidBody1: ({rbt.x}, {rbt.y}, {rbt.z})");
                     }
                 }
             }
