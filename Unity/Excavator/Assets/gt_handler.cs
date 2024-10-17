@@ -5,14 +5,14 @@ using UnityEngine;
 public class gt_handler : MonoBehaviour
 {
     // Start is called before the first frame update
-    float cabin_angle;
-    float cabin_angular_velocity;
-    float boom_angle;
-    float boom_angular_velocity;
-    float arm_angle;
-    float arm_angular_velocity;
-    float bucket_angle;
-    float bucket_angular_velocity;
+    public float cabin_angle;
+    public float cabin_angular_velocity;
+    public float boom_angle;
+    public float boom_angular_velocity;
+    public float arm_angle;
+    public float arm_angular_velocity;
+    public float bucket_angle;
+    public float bucket_angular_velocity;
 
     float prev_cabin_angle;
     float prev_boom_angle;
@@ -128,7 +128,7 @@ public class gt_handler : MonoBehaviour
         boom_angle = boom_angle - cabin_angle;
 
         // Debug.Log($"Cabin: {cabin_angle}, Boom: {boom_angle}, Arm: {arm_angle}, Bucket: {bucket_angle}");
-        Debug.Log($"Cabin Angular Velocity: {cabin_angular_velocity}, Boom Angular Velocity: {boom_angular_velocity}, Arm Angular Velocity: {arm_angular_velocity}, Bucket Angular Velocity: {bucket_angular_velocity}");
+        // Debug.Log($"Cabin Angular Velocity: {cabin_angular_velocity}, Boom Angular Velocity: {boom_angular_velocity}, Arm Angular Velocity: {arm_angular_velocity}, Bucket Angular Velocity: {bucket_angular_velocity}");
         
     }
 

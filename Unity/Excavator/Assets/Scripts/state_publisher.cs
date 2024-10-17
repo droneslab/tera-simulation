@@ -105,7 +105,7 @@ public class StatePublisher : MonoBehaviour
                 velocity = new double[] { cabin_data[0].z, boom_data[0].z, arm_data[0].z, bucket_data[0].z},
                 effort = new double[] { }
             };
-            Debug.Log($"Publishing message {msg}");
+            Debug.Log($"Publishing message {msg} on {topicName}");
 
             ros.Publish(topicName, msg);
             timeElapsed = 0;
