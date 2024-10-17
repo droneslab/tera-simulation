@@ -98,8 +98,14 @@ public class StatePublisher : MonoBehaviour
             // Debug.Log($"{cabin_data[0].x}");
             JointStateMsg msg = new JointStateMsg
             {
-                // header = new HeaderMsg { stamp = new TimeMsg { secs = (uint)Time.time, nsecs = (uint)((Time.time - (int)Time.time) * 1e9) } },
-                // header = new Std.Header { stamp = 0.0f },
+                header = new HeaderMsg
+                {
+                stamp = new TimeMsg
+                {
+                    sec = (int)Time.time,
+                    nanosec = (uint)((Time.time - (int)Time.time) * 1e9)
+                },
+                },
                 name = new string[] { "cabin_joint", "boom_joint", "arm_joint", "bucket_joint" },
                 position = new double[] { cabin_data[1].x, boom_data[1].x, arm_data[1].x, bucket_data[1].x},
                 velocity = new double[] { cabin_data[0].z, boom_data[0].z, arm_data[0].z, bucket_data[0].z},

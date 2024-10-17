@@ -2922,6 +2922,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_element: {fileID: 1441764570, guid: 46d9330398bd3b027b8eefbeb402ef45, type: 2}
+--- !u!1 &1752211888908585065
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9042329332133772367}
+  - component: {fileID: 1726943179747821755}
+  m_Layer: 0
+  m_Name: Odometry_Node
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9042329332133772367
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1752211888908585065}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: -0, y: 0, z: -0.25}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7765428402475564313}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!114 &1726943179747821755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1752211888908585065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ee6e657f9486f42b9c5aa668c998036, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  topicName: odom_sim
 --- !u!1 &1879887039253673582
 GameObject:
   m_ObjectHideFlags: 0
@@ -4314,6 +4359,7 @@ Transform:
   - {fileID: 8325028310961680478}
   - {fileID: 7409494443774142343}
   - {fileID: 1183197104925503556}
+  - {fileID: 9042329332133772367}
   m_Father: {fileID: 4088571415946294922}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2109002138808459528

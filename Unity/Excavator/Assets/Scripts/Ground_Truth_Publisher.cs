@@ -51,8 +51,14 @@ public class Ground_Truth_Publisher : MonoBehaviour
 
         JointStateMsg msg = new JointStateMsg
         {
-            // header = new HeaderMsg { stamp = new TimeMsg { secs = (uint)Time.time, nsecs = (uint)((Time.time - (int)Time.time) * 1e9) } },
-            // header = new Std.Header { stamp = 0.0f },
+            header = new HeaderMsg
+            {
+            stamp = new TimeMsg
+            {
+                sec = (int)Time.time,
+                nanosec = (uint)((Time.time - (int)Time.time) * 1e9)
+            },
+            },
             name = new string[] { "cabin_joint", "boom_joint", "arm_joint", "bucket_joint" },
             position = new double[] { cabin_angle, boom_angle, arm_angle, bucket_angle},
             velocity = new double[] { cabin_angular_velocity, boom_angular_velocity, arm_angular_velocity, bucket_angular_velocity},
