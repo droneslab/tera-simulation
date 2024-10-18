@@ -11,6 +11,8 @@ public class ExcavatorScript : MonoBehaviour
     public enum trackParts { left_sprocket_wheel, right_sprocket_wheel }
     // public enum armParts { scoop1 }
     public enum armParts { full_arm_rotation, lower_arm, upperToLow, scoop1 }
+    public agx.Vec3 rbf = new agx.Vec3();
+    public agx.Vec3 rbt = new agx.Vec3();
 
     // Track Variables
     private float forwardSpeed = 3f;
@@ -173,11 +175,10 @@ public class ExcavatorScript : MonoBehaviour
                 Debug.Log(nativeConstraint.getBodyAt(0).getMassProperties().getMass()+" , "+armPart);
                 if (nativeConstraint != null)
                 {
-                    agx.Vec3 rbf = new agx.Vec3(), rbt = new agx.Vec3();
                     if (nativeConstraint.getLastForce(nativeConstraint.getBodyAt(0), ref rbf, ref rbt))
                     {
-                        Debug.Log($"Force on RigidBody1: ({rbf.x}, {rbf.y}, {rbf.z})");
-                        Debug.Log($"Torque on RigidBody1: ({rbt.x}, {rbt.y}, {rbt.z})");
+                        // Debug.Log($"Force on RigidBody1: ({rbf.x}, {rbf.y}, {rbf.z})");
+                        // Debug.Log($"Torque on RigidBody1: ({rbt.x}, {rbt.y}, {rbt.z})");
                     }
                 }
             }
