@@ -34,6 +34,7 @@ public class Effector_Pose : MonoBehaviour
     public Vector3 end_position_E = new Vector3(0,0,0);
     public Vector3 end_orientation_E = new Vector3(0,0,0);
 
+
     void Start()
     {
         base_transform = base_link.GetComponent<Transform>();
@@ -50,7 +51,7 @@ public class Effector_Pose : MonoBehaviour
         end_orientation = end_transform.eulerAngles;
 
         GetRelativeTransform(base_position, end_position, base_orientation, end_orientation);
-        
+
 
     }
 

@@ -30,7 +30,8 @@ public class Effector_Publisher : MonoBehaviour
         rotation = efHandler.relative_rotation_E;
 
         Quaternion q = Quaternion.Euler(rotation);
-        
+
+
         TransformMsg msg = new TransformMsg
         {
             translation = new Vector3Msg
@@ -41,10 +42,10 @@ public class Effector_Publisher : MonoBehaviour
             },
             rotation = new QuaternionMsg
             {
-                x = rotation.x,
-                y = rotation.y,
-                z = rotation.z,
-                w = 0
+                x = q.x,
+                y = q.y,
+                z = q.z,
+                w = q.w
             }
         };
         ros.Publish(topicName, msg);
