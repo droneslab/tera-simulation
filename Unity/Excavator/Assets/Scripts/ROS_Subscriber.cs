@@ -23,6 +23,7 @@ public class ExcavatorROSSubscriber : MonoBehaviour
         {
             // Debug.Log(commandMessage);
             float bucketCommand = lookupOperation.dictionary["mbucketcmd"](commandMessage.mbucketcmd);
+            Debug.Log(bucketCommand);
             float armCommand = lookupOperation.dictionary["marmcmd"](commandMessage.marmcmd);
             float boomCommand = lookupOperation.dictionary["mboomcmd"](commandMessage.mboomcmd);
 

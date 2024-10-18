@@ -4,7 +4,7 @@ using System.Collections.Generic;
 class LookUp_Operation
 {
     float bucket_cmd(float x) {
-        if (x < 0.45) return 0.0f;
+        if (Math.Abs(x) <= 0.45) return 0.0f;
         // DONOT REMOVE
         // return (float)(0.60598 * Math.Pow(x, 3) + 0.23862 * Math.Pow(x, 2) + 0.51067 * x - 0.01160);
         if (x < -0.9f) return -0.7464773197463939f;
@@ -24,7 +24,7 @@ class LookUp_Operation
     }
 
     float arm_cmd(float x) {
-        if (x < 0.45) return 0.0f;
+        if (Math.Abs(x) <= 0.45) return 0.0f;
         // DONOT REMOVE
         // return (float)(0.48449 * Math.Pow(x, 3) + 0.01901 * Math.Pow(x, 2) + 0.40658 * x - 0.02811);
         if (x < -0.9f) return -0.7297529607089939f;
@@ -44,7 +44,7 @@ class LookUp_Operation
     }
 
     float boom_cmd(float x) {
-        if (x < 0.45) return 0.0f;
+        if (Math.Abs(x) <= 0.45) return 0.0f;
         //DONOT REMOVE
         // return (float)(−0.24199 * Math.Pow(x, 3) - 0.04539 * Math.Pow(x, 2) - 0.32927 * x - 0.00442);
         if (x < -0.9f) return 0.4463869246347824f;
