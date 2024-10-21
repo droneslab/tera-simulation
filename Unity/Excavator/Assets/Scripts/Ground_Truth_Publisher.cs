@@ -55,7 +55,7 @@ public class Ground_Truth_Publisher : MonoBehaviour
             {
             stamp = new TimeMsg
             {
-                sec = (int)Time.time,
+                sec = (uint)Time.time,
                 nanosec = (uint)((Time.time - (int)Time.time) * 1e9)
             },
             },
