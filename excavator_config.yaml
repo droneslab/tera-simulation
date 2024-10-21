@@ -1,6 +1,5 @@
 Excavator:
   - id: excavator1
-    name: Excavator_with_sensors_1
     type: excavator
     offset: 
       x: 1
@@ -56,6 +55,10 @@ Excavator:
           x: -0.06
           y: 1
           z: 0.1
+        rotation: 
+          x: 0
+          y: 0
+          z: 0
       
       - id: Arm_IMU
         type: IMU

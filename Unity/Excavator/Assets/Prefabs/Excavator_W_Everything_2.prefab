@@ -3462,6 +3462,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   topicName: odom_sim
+  excavator: {fileID: 0}
+  excavatorName: 
 --- !u!1 &2168407502754177326
 GameObject:
   m_ObjectHideFlags: 0
@@ -13884,6 +13886,7 @@ GameObject:
   - component: {fileID: 534315255073720826}
   - component: {fileID: 5927969577282053589}
   - component: {fileID: 7539038913558281477}
+  - component: {fileID: 6247548346008905852}
   m_Layer: 0
   m_Name: Excavator_W_Everything_2
   m_TagString: Untagged
@@ -13922,6 +13925,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fa192bcfc479d4edbf8c99aa692af1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  excavator: {fileID: 0}
+  excavatorName: 
   topicName: ground_truth
   publishMessageFrequency: 0.05
   gtHandlerObject: {fileID: 4523866763486138685}
@@ -13940,6 +13945,21 @@ MonoBehaviour:
   topicName: effector_pose
   publishMessageFrequency: 0.05
   efHandlerObject: {fileID: 4523866763486138685}
+--- !u!114 &6247548346008905852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8826213988610225197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ee6e657f9486f42b9c5aa668c998036, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  topicName: odom
+  excavator: {fileID: 0}
+  excavatorName: 
 --- !u!1 &8851385606320925562
 GameObject:
   m_ObjectHideFlags: 0

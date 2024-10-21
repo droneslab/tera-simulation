@@ -9,6 +9,8 @@ using System;
 public class StatePublisher : MonoBehaviour
 {
     ROSConnection ros;
+    public GameObject excavator;
+    public string excavatorName;
     public string topicName = "joint_states_simulator";
     public float publishMessageFrequency = 0.5f;
     private float timeElapsed;
@@ -67,6 +69,9 @@ public class StatePublisher : MonoBehaviour
     void Start()
     {
         // Get the ROSConnection from the ROSConnector
+        excavator = this.gameObject;
+        excavatorName = excavator.name;
+        topicName = excavatorName + "/" + topicName;
         ros = ROSConnection.instance;
         ros.RegisterPublisher<JointStateMsg>(topicName);
         
@@ -102,7 +107,7 @@ public class StatePublisher : MonoBehaviour
                 {
                 stamp = new TimeMsg
                 {
-                    sec = (uint)Time.time,
+                    sec = (int)Time.time,
                     nanosec = (uint)((Time.time - (int)Time.time) * 1e9)
                 },
                 },
@@ -111,7 +116,7 @@ public class StatePublisher : MonoBehaviour
                 velocity = new double[] { cabin_data[0].z, boom_data[0].z, arm_data[0].z, bucket_data[0].z},
                 effort = new double[] { }
             };
-            Debug.Log($"Publishing message {msg} on {topicName}");
+            Debug.Log($"Publishing {topicName} message: {msg}");
 
             ros.Publish(topicName, msg);
             timeElapsed = 0;

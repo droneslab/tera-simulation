@@ -9,6 +9,8 @@ using System;
 public class Ground_Truth_Publisher : MonoBehaviour
 {
     ROSConnection ros;
+    public GameObject excavator;
+    public string excavatorName;
     public string topicName = "ground_truth";
     public float publishMessageFrequency = 0.5f;
     private float timeElapsed;
@@ -25,6 +27,9 @@ public class Ground_Truth_Publisher : MonoBehaviour
     void Start()
     {
         ros = ROSConnection.instance;
+        excavator = this.gameObject;
+        excavatorName = excavator.name;
+        topicName = excavatorName + "/" + topicName;
         ros.RegisterPublisher<JointStateMsg>(topicName);
         gtHandler = gtHandlerObject.GetComponent<gt_handler>();
         cabin_angle = gtHandler.cabin_angle;
@@ -55,7 +60,7 @@ public class Ground_Truth_Publisher : MonoBehaviour
             {
             stamp = new TimeMsg
             {
-                sec = (uint)Time.time,
+                sec = (int)Time.time,
                 nanosec = (uint)((Time.time - (int)Time.time) * 1e9)
             },
             },
@@ -64,7 +69,7 @@ public class Ground_Truth_Publisher : MonoBehaviour
             velocity = new double[] { cabin_angular_velocity, boom_angular_velocity, arm_angular_velocity, bucket_angular_velocity},
             effort = new double[] { }
         };
-        Debug.Log($"Publishing message {msg} on {topicName}");
+        Debug.Log($"Publishing {topicName} message: {msg}");
 
         ros.Publish(topicName, msg);
         timeElapsed = 0;

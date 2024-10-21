@@ -12,11 +12,16 @@ public class Odom_Publisher : MonoBehaviour
 {
     [SerializeField]
     private string topicName = "odom";
+    public GameObject excavator;
+    public string excavatorName;
     ROSConnection ros;
 
     // Start is called before the first frame update
     void Start()
     {
+        excavator = this.gameObject;
+        excavatorName = excavator.name;
+        topicName = excavatorName + "/" + topicName;
         ros = ROSConnection.instance;
         ros.RegisterPublisher<OdometryMsg>(topicName);
     }
@@ -35,7 +40,7 @@ public class Odom_Publisher : MonoBehaviour
             {
             stamp = new TimeMsg
             {
-                sec = (uint)Time.time,
+                sec = (int)Time.time,
                 nanosec = (uint)((Time.time - (int)Time.time) * 1e9)
             },
             frame_id = "odom"
@@ -82,6 +87,7 @@ public class Odom_Publisher : MonoBehaviour
 
         // Publish the odom message
         ros.Publish(topicName, odomMsg);
+        Debug.Log($"Publishing {topicName} message: {odomMsg}");
         
     }
 }

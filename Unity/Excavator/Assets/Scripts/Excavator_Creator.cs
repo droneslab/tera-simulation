@@ -42,7 +42,6 @@ public class Sensor
 public class Excavator
 {
     public string id { get; set; }
-    public string name { get; set; }
     public string type { get; set; }
     public Offset offset { get; set; }
     public Rotation rotation { get; set; }
@@ -114,9 +113,9 @@ public class Excavator_Creator : MonoBehaviour
         
         foreach (var excavator in excavatorList.Excavator)
         {
-            Debug.Log($"Excavator ID: {excavator.id}, Name: {excavator.name}, Type: {excavator.type}");
+            Debug.Log($"Excavator ID: {excavator.id}, Type: {excavator.type}");
             GameObject excavatorObject = Instantiate(excavatorPrefab);
-            excavatorObject.name = excavator.name;
+            excavatorObject.name = excavator.id;
             excavatorObject.transform.position = new Vector3((float)excavator.offset.x, (float)excavator.offset.y, (float)excavator.offset.z);
             excavatorObject.transform.rotation = Quaternion.Euler((float)excavator.rotation.x, (float)excavator.rotation.y, (float)excavator.rotation.z);
             foreach (var sensor in excavator.sensors)
@@ -178,7 +177,7 @@ public class Excavator_Creator : MonoBehaviour
                     FieldInfo topicField = componentTransform.GetType().GetField("_topicName", BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance);
                     if (topicField != null)
                     {
-                        topicField.SetValue(componentTransform, sensor.topic);
+                        topicField.SetValue(componentTransform, "/" + excavator.id + sensor.topic);
                     }
                     else
                     {
