@@ -4,7 +4,7 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - excavatorPrefab: {fileID: 7210873327385068898, guid: 7374e12021ac651b5b87a605e10dabf0, type: 3}
+  - excavatorPrefab: {fileID: 9088247318780228642, guid: 94368eb208f0ffa82ae8eb1e399f824c, type: 3}
   - IMUPrefab: {fileID: 232150617613513197, guid: 68e0875adf39cbcaab689ba0165c0d42, type: 3}
   - GPSPrefab: {fileID: 3192925013080293980, guid: 6c364f20083a9cf4c8e7a2c139d4c571, type: 3}
   - RGBCameraPrefab: {fileID: 2016422477619200586, guid: ae5d0d7848c9e3c46a8ba3ca8b9f3413, type: 3}
