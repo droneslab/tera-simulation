@@ -3,7 +3,7 @@ Excavator:
     type: excavator
     offset: 
       x: 1
-      y: 1
+      y: 3
       z: 1
     rotation: 
       x: 0
