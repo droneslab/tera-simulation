@@ -10,7 +10,7 @@ public class ExcavatorScript : MonoBehaviour
 {
     public enum trackParts { left_sprocket_wheel, right_sprocket_wheel }
     // public enum armParts { scoop1 }
-    public enum armParts { full_arm_rotation, lower_arm, upperToLow, scoop1 }
+    public enum armParts { full_arm_rotation, lower_arm, upperToLow, scoop1, tankSpin_wheel, plow1}
     public agx.Vec3 rbf = new agx.Vec3();
     public agx.Vec3 rbt = new agx.Vec3();
 

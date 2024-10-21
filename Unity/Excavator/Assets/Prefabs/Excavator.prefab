@@ -1736,6 +1736,7 @@ GameObject:
   - component: {fileID: 8157867224753536216}
   - component: {fileID: 4594616373690476807}
   - component: {fileID: 7239732742467475577}
+  - component: {fileID: 438778979288185076}
   m_Layer: 0
   m_Name: push_blade_bucket
   m_TagString: Untagged
@@ -1822,6 +1823,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_element: {fileID: 1022019047, guid: 46d9330398bd3b027b8eefbeb402ef45, type: 2}
+--- !u!114 &438778979288185076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2165042917577982122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18a7ca203b9a47f4b98af78a42b50311, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_topEdge:
+    m_start:
+      m_parent: {fileID: 4631627082651866718}
+      m_localPosition: {x: 0.7250007, y: 0.092882946, z: 0.03982979}
+      m_localRotation: {x: -0.30920637, y: -0.63574237, z: -0.30898336, w: -0.6362015}
+    m_end:
+      m_parent: {fileID: 4631627082651866718}
+      m_localPosition: {x: -0.7250002, y: 0.09371352, z: 0.039192617}
+      m_localRotation: {x: 0.6362015, y: 0.30898336, z: -0.63574237, w: -0.30920637}
+  m_cuttingEdge:
+    m_start:
+      m_parent: {fileID: 4631627082651866718}
+      m_localPosition: {x: 0.7250007, y: -0.25056303, z: 0.042838454}
+      m_localRotation: {x: -0.39755943, y: -0.58476186, z: -0.39755946, w: -0.58476186}
+    m_end:
+      m_parent: {fileID: 4631627082651866718}
+      m_localPosition: {x: -0.7250002, y: -0.25056303, z: 0.042838573}
+      m_localRotation: {x: 0.58476186, y: 0.39755946, z: -0.58476186, w: -0.39755943}
+  m_cuttingDirection:
+    m_start:
+      m_parent: {fileID: 4631627082651866718}
+      m_localPosition: {x: -0.7050002, y: -0.22114886, z: -0.09847313}
+      m_localRotation: {x: -0.70441604, y: 0.70441604, z: 0.061628334, w: 0.061628398}
+    m_end:
+      m_parent: {fileID: 4631627082651866718}
+      m_localPosition: {x: -0.70500076, y: -0.39479718, z: 0.8863354}
+      m_localRotation: {x: -0.70441604, y: 0.70441604, z: 0.06162831, w: 0.061628375}
+  m_settings: {fileID: 0}
+  m_autoAddToTerrains: 0
 --- !u!1 &2192176989428504038
 GameObject:
   m_ObjectHideFlags: 0
@@ -2004,14 +2046,14 @@ GameObject:
   - component: {fileID: 3685142719968492327}
   - component: {fileID: 3105154526937429902}
   - component: {fileID: 3996488275064683171}
-  - component: {fileID: 7382435746802402357}
-  - component: {fileID: 3258575182692897979}
-  - component: {fileID: 6136556353331668929}
-  - component: {fileID: 8905141676390747497}
-  - component: {fileID: 5300948317960624308}
-  - component: {fileID: 586458082175055788}
-  - component: {fileID: 8137850261410938851}
   - component: {fileID: 5054259883559245802}
+  - component: {fileID: 8409873478395188687}
+  - component: {fileID: 4036901214164047704}
+  - component: {fileID: 6125527515291852432}
+  - component: {fileID: 1002735205111481641}
+  - component: {fileID: 8953886526692276189}
+  - component: {fileID: 7557075240016532572}
+  - component: {fileID: 3349865058231569992}
   m_Layer: 0
   m_Name: plow1
   m_TagString: Untagged
@@ -2054,13 +2096,13 @@ MonoBehaviour:
   m_drawGizmosEnable: 1
   m_connectedFrameNativeSyncEnabled: 0
   m_elementaryConstraints:
-  - {fileID: 7382435746802402357}
-  - {fileID: 3258575182692897979}
-  - {fileID: 6136556353331668929}
-  - {fileID: 8905141676390747497}
-  - {fileID: 5300948317960624308}
-  - {fileID: 586458082175055788}
-  - {fileID: 8137850261410938851}
+  - {fileID: 8409873478395188687}
+  - {fileID: 4036901214164047704}
+  - {fileID: 6125527515291852432}
+  - {fileID: 1002735205111481641}
+  - {fileID: 8953886526692276189}
+  - {fileID: 7557075240016532572}
+  - {fileID: 3349865058231569992}
 --- !u!114 &3996488275064683171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2079,10 +2121,23 @@ MonoBehaviour:
     m_localRotation: {x: 0, y: 0, z: 0, w: 1}
   m_connectedFrame:
     m_parent: {fileID: 8133360253074073128}
-    m_localPosition: {x: 0.255, y: 0.488, z: -0.205}
-    m_localRotation: {x: 0.0885918, y: 0.7015351, z: 0.0885918, w: 0.7015351}
+    m_localPosition: {x: 0.25500008, y: 0.4880005, z: -0.20500007}
+    m_localRotation: {x: 0.088591784, y: 0.7015351, z: 0.088591784, w: 0.7015351}
   m_synchronized: 1
---- !u!114 &7382435746802402357
+--- !u!114 &5054259883559245802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2467802097391133735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a7eb877e04087c46bfaa9d6365b90f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_element: {fileID: 487131239, guid: 46d9330398bd3b027b8eefbeb402ef45, type: 2}
+--- !u!114 &8409873478395188687
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2098,27 +2153,27 @@ MonoBehaviour:
   m_enable: 1
   m_rowData:
   - m_row: 0
-    m_elementaryConstraint: {fileID: 7382435746802402357}
-    m_compliance: 1e-10
+    m_elementaryConstraint: {fileID: 8409873478395188687}
+    m_compliance: 0.00000001
     m_damping: 0.040000003
     m_forceRange:
       Min: -Infinity
       Max: Infinity
   - m_row: 1
-    m_elementaryConstraint: {fileID: 7382435746802402357}
-    m_compliance: 1e-10
+    m_elementaryConstraint: {fileID: 8409873478395188687}
+    m_compliance: 0.00000001
     m_damping: 0.040000003
     m_forceRange:
       Min: -Infinity
       Max: Infinity
   - m_row: 2
-    m_elementaryConstraint: {fileID: 7382435746802402357}
-    m_compliance: 1e-10
+    m_elementaryConstraint: {fileID: 8409873478395188687}
+    m_compliance: 0.00000001
     m_damping: 0.040000003
     m_forceRange:
       Min: -Infinity
       Max: Infinity
---- !u!114 &3258575182692897979
+--- !u!114 &4036901214164047704
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2134,20 +2189,20 @@ MonoBehaviour:
   m_enable: 1
   m_rowData:
   - m_row: 0
-    m_elementaryConstraint: {fileID: 3258575182692897979}
-    m_compliance: 1e-10
+    m_elementaryConstraint: {fileID: 4036901214164047704}
+    m_compliance: 0.00000001
     m_damping: 0.040000003
     m_forceRange:
       Min: -Infinity
       Max: Infinity
   - m_row: 1
-    m_elementaryConstraint: {fileID: 3258575182692897979}
-    m_compliance: 1e-10
+    m_elementaryConstraint: {fileID: 4036901214164047704}
+    m_compliance: 0.00000001
     m_damping: 0.040000003
     m_forceRange:
       Min: -Infinity
       Max: Infinity
---- !u!114 &6136556353331668929
+--- !u!114 &6125527515291852432
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2160,19 +2215,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_nativeName: RR
-  m_enable: 0
+  m_enable: 1
   m_rowData:
   - m_row: 0
-    m_elementaryConstraint: {fileID: 6136556353331668929}
+    m_elementaryConstraint: {fileID: 6125527515291852432}
     m_compliance: 1e-10
     m_damping: 0.040000003
     m_forceRange:
       Min: 0
       Max: Infinity
   m_range:
-    Min: -Infinity
-    Max: Infinity
---- !u!114 &8905141676390747497
+    Min: 0
+    Max: 0.52
+--- !u!114 &1002735205111481641
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2188,15 +2243,15 @@ MonoBehaviour:
   m_enable: 1
   m_rowData:
   - m_row: 0
-    m_elementaryConstraint: {fileID: 8905141676390747497}
-    m_compliance: 1e-10
+    m_elementaryConstraint: {fileID: 1002735205111481641}
+    m_compliance: 0.00000001
     m_damping: 0.040000003
     m_forceRange:
-      Min: -1
-      Max: 1
+      Min: -Infinity
+      Max: Infinity
   m_speed: 0
   m_lockAtZeroSpeed: 0
---- !u!114 &5300948317960624308
+--- !u!114 &8953886526692276189
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2212,14 +2267,14 @@ MonoBehaviour:
   m_enable: 0
   m_rowData:
   - m_row: 0
-    m_elementaryConstraint: {fileID: 5300948317960624308}
-    m_compliance: 1e-10
+    m_elementaryConstraint: {fileID: 8953886526692276189}
+    m_compliance: 0.00000001
     m_damping: 0.040000003
     m_forceRange:
       Min: -Infinity
       Max: Infinity
   m_position: 0
---- !u!114 &586458082175055788
+--- !u!114 &7557075240016532572
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2235,8 +2290,8 @@ MonoBehaviour:
   m_enable: 0
   m_rowData:
   - m_row: 0
-    m_elementaryConstraint: {fileID: 586458082175055788}
-    m_compliance: 1e-10
+    m_elementaryConstraint: {fileID: 7557075240016532572}
+    m_compliance: 0.00000001
     m_damping: 0.040000003
     m_forceRange:
       Min: -Infinity
@@ -2244,7 +2299,7 @@ MonoBehaviour:
   m_voltage: 24
   m_armatureResistance: 1
   m_torqueConstant: 1
---- !u!114 &8137850261410938851
+--- !u!114 &3349865058231569992
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2260,8 +2315,8 @@ MonoBehaviour:
   m_enable: 0
   m_rowData:
   - m_row: 0
-    m_elementaryConstraint: {fileID: 8137850261410938851}
-    m_compliance: 1e-10
+    m_elementaryConstraint: {fileID: 3349865058231569992}
+    m_compliance: 0.00000001
     m_damping: 0.040000003
     m_forceRange:
       Min: -Infinity
@@ -2271,19 +2326,6 @@ MonoBehaviour:
   m_minimumStaticFrictionForceRange:
     Min: -0
     Max: 0
---- !u!114 &5054259883559245802
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2467802097391133735}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a7eb877e04087c46bfaa9d6365b90f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_element: {fileID: 487131239, guid: 46d9330398bd3b027b8eefbeb402ef45, type: 2}
 --- !u!1 &2546749006429749539
 GameObject:
   m_ObjectHideFlags: 0
@@ -6258,30 +6300,30 @@ MonoBehaviour:
   m_topEdge:
     m_start:
       m_parent: {fileID: 4737218017093241419}
-      m_localPosition: {x: 0.049619604, y: 0.5629184, z: 0.28499988}
-      m_localRotation: {x: 0.00000008593009, y: -0.000000049923973, z: -0.931736, w: 0.36313632}
+      m_localPosition: {x: 0.04961951, y: 0.5629183, z: 0.28500003}
+      m_localRotation: {x: -0.000000046502098, y: -0.0000000076158715, z: 0.91673684, w: 0.39949173}
     m_end:
       m_parent: {fileID: 4737218017093241419}
-      m_localPosition: {x: 0.04961954, y: 0.56291837, z: -0.28500006}
-      m_localRotation: {x: -0.36313632, y: 0.931736, z: -0.000000049923973, w: 0.00000008593009}
+      m_localPosition: {x: 0.049619503, y: 0.5629184, z: -0.28500035}
+      m_localRotation: {x: -0.39949173, y: -0.91673684, z: -0.0000000076158715, w: -0.000000046502098}
   m_cuttingEdge:
     m_start:
       m_parent: {fileID: 4083103598203446333}
-      m_localPosition: {x: 0.014555091, y: 0.021329926, z: 0.29855734}
-      m_localRotation: {x: -0.00000038510493, y: 0.00000058020703, z: -0.52822185, w: -0.84910643}
+      m_localPosition: {x: -0.035937604, y: -0.02191491, z: 0.29484782}
+      m_localRotation: {x: 0.00000003415533, y: 0.000000024693536, z: 0.41714188, w: 0.90884143}
     m_end:
       m_parent: {fileID: 4083103598203446333}
-      m_localPosition: {x: 0.014555376, y: 0.021330653, z: -0.3045297}
-      m_localRotation: {x: 0.84910643, y: 0.52822185, z: 0.00000058020703, w: -0.00000038510493}
+      m_localPosition: {x: -0.0359376, y: -0.021914888, z: -0.29775846}
+      m_localRotation: {x: -0.90884143, y: -0.41714188, z: 0.000000024693536, w: 0.00000003415533}
   m_cuttingDirection:
     m_start:
       m_parent: {fileID: 4083103598203446333}
-      m_localPosition: {x: -0.0040907892, y: 0.013339896, z: 0.15999994}
-      m_localRotation: {x: -0.29400167, y: 0.64308864, z: 0.29400173, w: 0.6430888}
+      m_localPosition: {x: 0.07320411, y: 0.047371127, z: 0.15999997}
+      m_localRotation: {x: 0.33790475, y: 0.6211445, z: 0.62114435, w: 0.33790475}
     m_end:
       m_parent: {fileID: 4083103598203446333}
-      m_localPosition: {x: -0.6583432, y: -0.74293685, z: 0.15999964}
-      m_localRotation: {x: -0.29400167, y: 0.6430886, z: 0.29400173, w: 0.64308876}
+      m_localPosition: {x: -0.7663467, y: -0.49591035, z: 0.16000007}
+      m_localRotation: {x: 0.33790472, y: 0.62114453, z: 0.6211444, w: 0.33790472}
   m_settings: {fileID: 0}
   m_autoAddToTerrains: 0
 --- !u!1 &4871408465941476924
