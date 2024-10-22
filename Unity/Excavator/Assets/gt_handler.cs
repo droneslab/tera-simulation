@@ -85,15 +85,15 @@ public class gt_handler : MonoBehaviour
             return;
         }
         else{
-            cabin_angular_velocity = cabin_angle - prev_cabin_angle;
-            boom_angular_velocity = boom_angle - prev_boom_angle;
-            arm_angular_velocity = arm_angle - prev_arm_angle;
-            bucket_angular_velocity = bucket_angle - prev_bucket_angle;
+            cabin_angular_velocity = (cabin_angle - prev_cabin_angle) * (Mathf.PI/180);
+            boom_angular_velocity = (boom_angle - prev_boom_angle) * (Mathf.PI/180);
+            arm_angular_velocity = (arm_angle - prev_arm_angle) * (Mathf.PI/180);
+            bucket_angular_velocity = (bucket_angle - prev_bucket_angle) * (Mathf.PI/180);
 
-            cabin_angular_velocity = cabin_angular_velocity / Time.deltaTime;
-            boom_angular_velocity = boom_angular_velocity / Time.deltaTime;
-            arm_angular_velocity = arm_angular_velocity / Time.deltaTime;
-            bucket_angular_velocity = bucket_angular_velocity / Time.deltaTime;
+            cabin_angular_velocity = cabin_angular_velocity / Time.fixedDeltaTime;
+            boom_angular_velocity = boom_angular_velocity / Time.fixedDeltaTime;
+            arm_angular_velocity = arm_angular_velocity / Time.fixedDeltaTime;
+            bucket_angular_velocity = bucket_angular_velocity / Time.fixedDeltaTime;
 
             prev_cabin_angle = cabin_angle;
             prev_boom_angle = boom_angle;

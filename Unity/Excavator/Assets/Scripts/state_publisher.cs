@@ -12,7 +12,7 @@ public class StatePublisher : MonoBehaviour
     public GameObject excavator;
     public string excavatorName;
     public string topicName = "joint_states_simulator";
-    public float publishMessageFrequency = 0.5f;
+    public float publishMessageFrequency = 0.1f;
     private float timeElapsed;
     // Variables to hold child GameObjects
     private GameObject cabin_imu;
