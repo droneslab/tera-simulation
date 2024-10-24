@@ -32,15 +32,38 @@ public class ExcavatorScript : MonoBehaviour
     private float armMoveSpeed = 0.4f;
 
     // Force and Torque Logging
-    private List<ForceData> armForces = new List<ForceData>();
-
+    private Dictionary<string, ForceData> armForces = new Dictionary<string, ForceData>();
     public struct ForceData
     {
         public float Time;
-        public Vector3 RigidBody1Force;
-        public Vector3 RigidBody2Force;
-        public Vector3 RigidBody1Torque;
-        public Vector3 RigidBody2Torque;
+        public string RigidBody;
+        public Vector3 Force;
+        public Vector3 Torque;
+
+        public ForceData(float time, string rigidBody, Vector3 force, Vector3 torque) {
+            Time = time;
+            RigidBody = rigidBody;
+            Force = force;
+            Torque = torque;
+        }
+    }
+
+    public Dictionary<string, ForceData> GetArmForces() {
+        return armForces;
+    }
+
+    // Arm parts mapper
+    private static Dictionary<armParts, string> armPartNames = new Dictionary<armParts, string> {
+        { armParts.full_arm_rotation, "Swing" },
+        { armParts.lower_arm, "Boom" },
+        { armParts.upperToLow, "Arm" },
+        { armParts.scoop1, "Bucket" },
+        { armParts.tankSpin_wheel, "Slew" },
+        { armParts.plow1, "Plow" }
+    };
+
+    public static string GetDisplayName(armParts part) {
+        return armPartNames[part];
     }
 
     void Start()
@@ -86,6 +109,7 @@ public class ExcavatorScript : MonoBehaviour
                 }
             }
         }
+        UpdateSelectedArmText();
     }
 
     void Update()
@@ -133,7 +157,7 @@ public class ExcavatorScript : MonoBehaviour
         HandleArmMovement();
 
         // Log the forces and torques applied to the arm parts
-        // LogArmForces();
+        LogArmForces();
     }
 
     void HandleArmMovement()
@@ -164,19 +188,29 @@ public class ExcavatorScript : MonoBehaviour
 
     void LogArmForces()
 {
-    foreach (var armPart in armGameObjects)
+    foreach (armParts part in Enum.GetValues(typeof(armParts)))
     {
+        GameObject armPart = armGameObjects[(int)part];
         if (armPart != null)
         {
             var armConstraint = armPart.GetComponent<AGXUnity.Constraint>();
+            var name = GetDisplayName(part);
             if (armConstraint != null)
             {
                 var nativeConstraint = armConstraint.Native as agx.Constraint;
-                Debug.Log(nativeConstraint.getBodyAt(0).getMassProperties().getMass()+" , "+armPart);
+                // Debug.Log(nativeConstraint.getBodyAt(0).getMassProperties().getMass() + " , " + name);
                 if (nativeConstraint != null)
                 {
                     if (nativeConstraint.getLastForce(nativeConstraint.getBodyAt(0), ref rbf, ref rbt))
                     {
+                        Vector3 force = new Vector3((float)rbf.x, (float)rbf.y, (float)rbf.z);
+                        Vector3 torque = new Vector3((float)rbt.x, (float)rbt.y, (float)rbt.z);
+                        if (armForces.ContainsKey(name)) {
+                            armForces[name] = new ForceData(Time.time, name, force, torque);
+                        } else {
+                            armForces.Add(name, new ForceData(Time.time, name, force, torque));
+                        }
+
                         // Debug.Log($"Force on RigidBody1: ({rbf.x}, {rbf.y}, {rbf.z})");
                         // Debug.Log($"Torque on RigidBody1: ({rbt.x}, {rbt.y}, {rbt.z})");
                     }
@@ -190,26 +224,30 @@ public class ExcavatorScript : MonoBehaviour
     void SelectNextArmPart()
     {
         selectedArmIndex = (selectedArmIndex + 1) % armGameObjects.Length;
-        // UpdateSelectedArmText();
+        UpdateSelectedArmText();
     }
 
     void SelectPreviousArmPart()
     {
         selectedArmIndex = (selectedArmIndex - 1 + armGameObjects.Length) % armGameObjects.Length;
-        // UpdateSelectedArmText();
+        UpdateSelectedArmText();
     }
 
     void UpdateSelectedArmText()
     {
-        var text = "Selected Arm Part: " + ((armParts)selectedArmIndex).ToString();
         GameObject canvasBoard = GameObject.Find("canvasboard");
-        TextMeshProUGUI textMesh = canvasBoard.GetComponent<TextMeshProUGUI>();
-        textMesh.text = text;
+        if (canvasBoard != null){
+            var text = "Selected Joint (Left/Right) : " + GetDisplayName((armParts)selectedArmIndex).ToString() 
+                + " \nMode (Tab) : Camera/Excavator";
+            TextMeshProUGUI textMesh = canvasBoard.GetComponent<TextMeshProUGUI>();
+            textMesh.text = text;
+        }
     }
 
     // Method to move the tracks (called by the ROS subscriber)
     public void MoveExcavatorTracks(float leftTrackSpeed_, float rightTrackSpeed_)
     {
+
         leftTrackSpeed = leftTrackSpeed_;
         rightTrackSpeed = rightTrackSpeed_;
         trackCommandReceived = true; 

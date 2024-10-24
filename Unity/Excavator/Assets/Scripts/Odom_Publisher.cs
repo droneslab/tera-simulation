@@ -87,7 +87,7 @@ public class Odom_Publisher : MonoBehaviour
 
         // Publish the odom message
         ros.Publish(topicName, odomMsg);
-        Debug.Log($"Publishing {topicName} message: {odomMsg}");
+        // Debug.Log($"Publishing {topicName} message: {odomMsg}");
         
     }
 }

@@ -69,7 +69,7 @@ public class Ground_Truth_Publisher : MonoBehaviour
             velocity = new double[] { cabin_angular_velocity, boom_angular_velocity, arm_angular_velocity, bucket_angular_velocity},
             effort = new double[] { }
         };
-        Debug.Log($"Publishing {topicName} message: {msg}");
+        // Debug.Log($"Publishing {topicName} message: {msg}");
 
         ros.Publish(topicName, msg);
         timeElapsed = 0;
