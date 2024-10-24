@@ -118,6 +118,10 @@ public class Excavator_Creator : MonoBehaviour
             excavatorObject.name = excavator.id;
             excavatorObject.transform.position = new Vector3((float)excavator.offset.x, (float)excavator.offset.y, (float)excavator.offset.z);
             excavatorObject.transform.rotation = Quaternion.Euler((float)excavator.rotation.x, (float)excavator.rotation.y, (float)excavator.rotation.z);
+            if (excavator.sensors == null)
+            {
+                excavator.sensors = new List<Sensor>();
+            }
             foreach (var sensor in excavator.sensors)
             {
                 // Debug.Log($"Sensor ID: {sensor.id}, Type: {sensor.type}, Location: {sensor.location}, Offset: x={sensor.offset.x}, y={sensor.offset.y}, z={sensor.offset.z}, Rotation: x={sensor.rotation.x}, y={sensor.rotation.y}, z={sensor.rotation.z}");
