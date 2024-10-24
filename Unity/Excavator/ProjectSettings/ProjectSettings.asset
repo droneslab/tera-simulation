@@ -646,7 +646,7 @@ PlayerSettings:
   webGLMemoryGeometricGrowthCap: 96
   webGLPowerPreference: 2
   scriptingDefineSymbols:
-    Standalone: AGXUNITY_INPUT_SYSTEM
+    Standalone: AGXUNITY_INPUT_SYSTEM;ROS2
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend: {}
