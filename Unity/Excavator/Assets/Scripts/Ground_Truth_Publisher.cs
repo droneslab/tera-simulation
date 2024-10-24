@@ -15,15 +15,21 @@ public class Ground_Truth_Publisher : MonoBehaviour
     public float publishMessageFrequency = 0.5f;
     private float timeElapsed;
     public GameObject gtHandlerObject;
+    public GameObject onshapeObject;
+    private ExcavatorScript excavatorController;
     private gt_handler gtHandler;
     float cabin_angle;
     float cabin_angular_velocity;
+    float cabin_effort;
     float boom_angle;
     float boom_angular_velocity;
+    float boom_effort;
     float arm_angle;
     float arm_angular_velocity;
+    float arm_effort;
     float bucket_angle;
     float bucket_angular_velocity;
+    float bucket_effort;
     void Start()
     {
         ros = ROSConnection.instance;
@@ -32,27 +38,27 @@ public class Ground_Truth_Publisher : MonoBehaviour
         topicName = excavatorName + "/" + topicName;
         ros.RegisterPublisher<JointStateMsg>(topicName);
         gtHandler = gtHandlerObject.GetComponent<gt_handler>();
+        excavatorController = onshapeObject.GetComponent<ExcavatorScript>();
+        Dictionary<string, ExcavatorScript.ForceData> armEfforts = excavatorController.GetArmForces();
         cabin_angle = gtHandler.cabin_angle;
         cabin_angular_velocity = gtHandler.cabin_angular_velocity;
-        boom_angle = gtHandler.boom_angle;
-        boom_angular_velocity = gtHandler.boom_angular_velocity;
-        arm_angle = gtHandler.arm_angle;
-        arm_angular_velocity = gtHandler.arm_angular_velocity; 
-        bucket_angle = gtHandler.bucket_angle;
-        bucket_angular_velocity = gtHandler.bucket_angular_velocity;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        cabin_angle = gtHandler.cabin_angle;
-        cabin_angular_velocity = gtHandler.cabin_angular_velocity;
+        Dictionary<string, ExcavatorScript.ForceData> armEfforts = excavatorController.GetArmForces();
+        cabin_effort = armEfforts["Slew"].Torque.z;
         boom_angle = gtHandler.boom_angle;
         boom_angular_velocity = gtHandler.boom_angular_velocity;
+        boom_effort = armEfforts["Boom"].Torque.z;
         arm_angle = gtHandler.arm_angle;
         arm_angular_velocity = gtHandler.arm_angular_velocity; 
+        arm_effort = armEfforts["Arm"].Torque.z;
         bucket_angle = gtHandler.bucket_angle;
         bucket_angular_velocity = gtHandler.bucket_angular_velocity;
+        bucket_effort = armEfforts["Bucket"].Torque.z;
 
         JointStateMsg msg = new JointStateMsg
         {
@@ -67,7 +73,7 @@ public class Ground_Truth_Publisher : MonoBehaviour
             name = new string[] { "cabin_joint", "boom_joint", "arm_joint", "bucket_joint" },
             position = new double[] { cabin_angle, boom_angle, arm_angle, bucket_angle},
             velocity = new double[] { cabin_angular_velocity, boom_angular_velocity, arm_angular_velocity, bucket_angular_velocity},
-            effort = new double[] { }
+            effort = new double[] { cabin_effort, boom_effort, arm_effort, bucket_effort}
         };
         // Debug.Log($"Publishing {topicName} message: {msg}");
 
