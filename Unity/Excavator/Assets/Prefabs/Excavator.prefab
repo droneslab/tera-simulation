@@ -5204,6 +5204,8 @@ GameObject:
   - component: {fileID: 1769182236140209498}
   - component: {fileID: 989542201474064585}
   - component: {fileID: 4777897683768698599}
+  - component: {fileID: 4286773277994481827}
+  - component: {fileID: 4423207059116854923}
   m_Layer: 0
   m_Name: onshape
   m_TagString: Untagged
@@ -5278,6 +5280,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excavatorScript: {fileID: 989542201474064585}
+  delay: 5
+  B: 10
+  C: 5
+--- !u!114 &4286773277994481827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4146021004321436623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 753a9d8629a33a2b18b4533a6839b0d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  modeType: 
+--- !u!114 &4423207059116854923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4146021004321436623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 008149e3b15e29445915707e0d1a3511, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  excavatorScript: {fileID: 0}
+  sensitivity: 10
 --- !u!1 &4172220710189846488
 GameObject:
   m_ObjectHideFlags: 0
@@ -14202,6 +14234,7 @@ MonoBehaviour:
   topicName: ground_truth
   publishMessageFrequency: 0.05
   gtHandlerObject: {fileID: 7693564220076090493}
+  onshapeObject: {fileID: 0}
 --- !u!114 &3952771506310861561
 MonoBehaviour:
   m_ObjectHideFlags: 0
