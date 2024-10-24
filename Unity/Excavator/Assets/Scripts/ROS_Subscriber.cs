@@ -15,7 +15,7 @@ public class ExcavatorROSSubscriber : MonoBehaviour
     float omega_n = 2.0f;
     
     float zeta = 0.8f;
-    float delay = 5.0f;
+    public float delay = 5.0f;
 
     public float B = 10.0f;
     public float C = 5.0f;
