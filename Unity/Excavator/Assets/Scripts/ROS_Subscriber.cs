@@ -93,10 +93,6 @@ public class ExcavatorROSSubscriber : MonoBehaviour
             }
 
             float bucketCommand = lookupOperation.dictionary["mbucketcmd"](commandMessage.mbucketcmd);
-<<<<<<< Updated upstream
-            //Debug.Log(bucketCommand);
-=======
->>>>>>> Stashed changes
             float armCommand = lookupOperation.dictionary["marmcmd"](commandMessage.marmcmd);
             float boomCommand = lookupOperation.dictionary["mboomcmd"](commandMessage.mboomcmd);
             
