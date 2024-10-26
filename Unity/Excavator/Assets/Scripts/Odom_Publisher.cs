@@ -12,8 +12,10 @@ public class Odom_Publisher : MonoBehaviour
 {
     [SerializeField]
     private string topicName = "odom";
-    public GameObject excavator;
+    public GameObject base_link,excavator;
     public string excavatorName;
+
+    Transform baseLinkTransform;
     ROSConnection ros;
 
     // Start is called before the first frame update
@@ -24,14 +26,19 @@ public class Odom_Publisher : MonoBehaviour
         topicName = excavatorName + "/" + topicName;
         ros = ROSConnection.instance;
         ros.RegisterPublisher<OdometryMsg>(topicName);
+
+        baseLinkTransform = base_link.GetComponent<Transform>();
     }
 
     // Update is called once per frame
     void Update()
     {
         // Get the position and orientation of the excavator part
-        Vector3 position = transform.position;
-        Quaternion orientation = transform.rotation;
+        // Vector3 position = transform.position;
+        // Quaternion orientation = transform.rotation;
+        Vector3 position = baseLinkTransform.position;
+        Quaternion orientation = baseLinkTransform.rotation;
+
 
         // Create the odom message
         OdometryMsg odomMsg = new OdometryMsg

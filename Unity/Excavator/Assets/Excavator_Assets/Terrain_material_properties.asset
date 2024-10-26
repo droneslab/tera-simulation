@@ -15,13 +15,13 @@ MonoBehaviour:
   m_presetName: dirt_1
   m_density: 1474
   m_maximumDensity: 2000
-  m_youngsModulus: 6500000
+  m_youngsModulus: 8000000
   m_poissonsRatio: 0.15
   m_frictionAngle: 39.980995
-  m_cohesion: 2100
+  m_cohesion: 3000
   m_dilatancyAngle: 12.988953
-  m_swellFactor: 1.28
-  m_hardeningConstantKE: 1
+  m_swellFactor: 1.1
+  m_hardeningConstantKE: 1.2
   m_hardeningConstantNE: 0.0833
   m_preconsolidationStress: 98000
   m_bankStatePhi: 0.6666

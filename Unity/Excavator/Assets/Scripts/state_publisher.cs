@@ -24,7 +24,7 @@ public class StatePublisher : MonoBehaviour
     private Component arm_imu_sensor;
     private Component bucket_imu_sensor;
     // private List<string> imuDataFields = new List<string> { "position", "velocity", "acceleration", "rotation", "angularVelocity", "RollPitchYaw" };
-    private List<string> imuDataFields = new List<string> { "angularVelocity", "RollPitchYaw" };
+    private List<string> imuDataFields = new List<string> { "angularVelocity" };
     Transform FindChildRecursive(Transform parent, string childName)
     {
         foreach (Transform child in parent)
@@ -99,27 +99,28 @@ public class StatePublisher : MonoBehaviour
             List<Vector3> boom_data = GrabIMUProperties(boom_imu_sensor);
             List<Vector3> arm_data = GrabIMUProperties(arm_imu_sensor);
             List<Vector3> bucket_data = GrabIMUProperties(bucket_imu_sensor);
+
             // Debug.Log($"Cabin data: {cabin_data}");
             // Debug.Log($"{cabin_data[0].x}");
-            JointStateMsg msg = new JointStateMsg
-            {
-                header = new HeaderMsg
-                {
-                stamp = new TimeMsg
-                {
-                    sec = (int)Time.time,
-                    nanosec = (uint)((Time.time - (int)Time.time) * 1e9)
-                },
-                },
-                name = new string[] { "cabin_joint", "boom_joint", "arm_joint", "bucket_joint" },
-                position = new double[] { cabin_data[1].x, boom_data[1].x, arm_data[1].x, bucket_data[1].x},
-                velocity = new double[] { cabin_data[0].z, boom_data[0].z, arm_data[0].z, bucket_data[0].z},
-                effort = new double[] { }
-            };
-            Debug.Log($"Publishing {topicName} message: {msg}");
+            // JointStateMsg msg = new JointStateMsg
+            // {
+            //     header = new HeaderMsg
+            //     {
+            //     stamp = new TimeMsg
+            //     {
+            //         sec = (int)Time.time,
+            //         nanosec = (uint)((Time.time - (int)Time.time) * 1e9)
+            //     },
+            //     },
+            //     name = new string[] { "cabin_joint", "boom_joint", "arm_joint", "bucket_joint" },
+            //     position = new double[] { cabin_data[1].x, boom_data[1].x, arm_data[1].x, bucket_data[1].x},
+            //     velocity = new double[] { cabin_data[0].z, boom_data[0].z, arm_data[0].z, bucket_data[0].z},
+            //     effort = new double[] { }
+            // };
+            // Debug.Log($"Publishing {topicName} message: {msg}");
 
-            ros.Publish(topicName, msg);
-            timeElapsed = 0;
+            // ros.Publish(topicName, msg);
+            // timeElapsed = 0;
         }
     }
 }
