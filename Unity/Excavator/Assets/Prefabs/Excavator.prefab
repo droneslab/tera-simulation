@@ -1552,6 +1552,7 @@ MonoBehaviour:
   topicName: odom_sim
   excavator: {fileID: 0}
   excavatorName: 
+  base_link: {fileID: 0}
 --- !u!1 &1735169636400839238
 GameObject:
   m_ObjectHideFlags: 0
@@ -3862,8 +3863,8 @@ MonoBehaviour:
     m_compliance: 0.00000001
     m_damping: 0.040000003
     m_forceRange:
-      Min: -Infinity
-      Max: Infinity
+      Min: -10000
+      Max: 10000
   m_speed: 0
   m_lockAtZeroSpeed: 0
 --- !u!114 &7991401356185210904
@@ -5206,6 +5207,8 @@ GameObject:
   - component: {fileID: 4777897683768698599}
   - component: {fileID: 4286773277994481827}
   - component: {fileID: 4423207059116854923}
+  - component: {fileID: 6358449397892561015}
+  - component: {fileID: 3230031313890460487}
   m_Layer: 0
   m_Name: onshape
   m_TagString: Untagged
@@ -5297,6 +5300,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   modeType: 
 --- !u!114 &4423207059116854923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4146021004321436623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 008149e3b15e29445915707e0d1a3511, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  excavatorScript: {fileID: 0}
+  sensitivity: 10
+--- !u!114 &6358449397892561015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4146021004321436623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 753a9d8629a33a2b18b4533a6839b0d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  modeType: 
+--- !u!114 &3230031313890460487
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -14100,8 +14130,8 @@ MonoBehaviour:
     m_compliance: 0.00000001
     m_damping: 0.040000003
     m_forceRange:
-      Min: -Infinity
-      Max: Infinity
+      Min: -10000
+      Max: 10000
   m_speed: 0
   m_lockAtZeroSpeed: 0
 --- !u!114 &6941663477142652072
@@ -14207,7 +14237,7 @@ Transform:
   m_GameObject: {fileID: 9088247318780228642}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 1.04, z: 0}
+  m_LocalPosition: {x: 30, y: 1, z: 14.629669}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -14265,6 +14295,7 @@ MonoBehaviour:
   topicName: odom
   excavator: {fileID: 0}
   excavatorName: 
+  base_link: {fileID: 0}
 --- !u!1 &9138188897193255655
 GameObject:
   m_ObjectHideFlags: 0
