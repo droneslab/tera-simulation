@@ -1,10 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using AGXUnity;
+using AGXUnity.Utils;
+using TMPro;
+using System.Collections.Generic;
+using System;
+using UnityEngine.InputSystem;
 
 public class Excavator_Initializing : MonoBehaviour
 {
-    private ExcavatorScript excavatorScript;
+    public ExcavatorScript excavatorScript;
     private Camera_Controller camera_Controller;
     public string modeType;
     // Start is called before the first frame update
@@ -21,11 +26,17 @@ public class Excavator_Initializing : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Tab)) toggleMode();
+        if (Gamepad.current != null) dualMode();
     }
 
     void toggleMode() {
         camera_Controller.enabled = !camera_Controller.enabled;
         excavatorScript.enabled = !excavatorScript.enabled;
         Debug.Log("changed,....");
+    }
+
+    void dualMode() {
+        camera_Controller.enabled = true;
+        excavatorScript.enabled = true;
     }
 }

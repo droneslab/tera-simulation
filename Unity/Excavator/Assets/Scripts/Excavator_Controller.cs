@@ -5,14 +5,17 @@ using AGXUnity.Utils;
 using TMPro;
 using System.Collections.Generic;
 using System;
+using UnityEngine.InputSystem.XInput;
+using UnityEngine.InputSystem;
 
 public class ExcavatorScript : MonoBehaviour
 {
     public enum trackParts { left_sprocket_wheel, right_sprocket_wheel }
-    // public enum armParts { scoop1 }
+    // public enum armParts {scoop1}
     public enum armParts { full_arm_rotation, lower_arm, upperToLow, scoop1, tankSpin_wheel, plow1}
     public agx.Vec3 rbf = new agx.Vec3();
     public agx.Vec3 rbt = new agx.Vec3();
+    private Gamepad gamepad;
 
     // Track Variables
     private float forwardSpeed = 3f;
@@ -32,7 +35,7 @@ public class ExcavatorScript : MonoBehaviour
     private float armMoveSpeed = 0.4f;
 
     // Force and Torque Logging
-    private Dictionary<string, ForceData> armForces = new Dictionary<string, ForceData>();
+    public Dictionary<string, ForceData> armForces = new Dictionary<string, ForceData>();
     public struct ForceData
     {
         public float Time;
@@ -68,6 +71,8 @@ public class ExcavatorScript : MonoBehaviour
 
     void Start()
     {
+        // Transform parentTransform = transform.parent;
+        gamepad = Gamepad.current;
         // Initialize track parts
         foreach (trackParts part in Enum.GetValues(typeof(trackParts)))
         {
@@ -120,6 +125,13 @@ public class ExcavatorScript : MonoBehaviour
             float forwardInput = Input.GetKey(KeyCode.W) ? 1.0f : (Input.GetKey(KeyCode.S) ? -1.0f : 0);
             float turnInput = Input.GetKey(KeyCode.A) ? -1.0f : (Input.GetKey(KeyCode.D) ? 1.0f : 0);
 
+            //Handle GamePad
+            if(gamepad != null) {
+                Vector2 leftStick = gamepad.leftStick.ReadValue();
+                forwardInput = leftStick.y * forwardSpeed;
+                turnInput = leftStick.x * forwardSpeed;
+            }
+
             leftTrackSpeed = forwardSpeed * (forwardInput + turnInput);
             rightTrackSpeed = forwardSpeed * (forwardInput - turnInput);
 
@@ -156,24 +168,40 @@ public class ExcavatorScript : MonoBehaviour
         // Handle up and down arrow key input for moving the selected arm part
         HandleArmMovement();
 
+
+        //Gamepad Control for manipulation
+        if(gamepad != null) {
+            gamepadSelectedArm();
+            handleSlewGamepad();
+        }
+
         // Log the forces and torques applied to the arm parts
         LogArmForces();
     }
 
     void HandleArmMovement()
     {
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            SetArmSpeed(armMoveSpeed);
+        // Keyboard controls
+        if (Input.GetKey(KeyCode.UpArrow)) SetArmSpeed(armMoveSpeed);
+        else if (Input.GetKey(KeyCode.DownArrow)) SetArmSpeed(-armMoveSpeed);
+        else SetArmSpeed(0);
+
+        //Gamepad controls
+        if(gamepad != null) {
+            var rightTrigger = gamepad.rightTrigger.ReadValue();
+            var leftTrigger  =  gamepad.leftTrigger.ReadValue();
+            float armSpeed = (rightTrigger - leftTrigger) * armMoveSpeed;
+            SetArmSpeed(armSpeed);
+
+            var rightBumper = gamepad.rightShoulder.ReadValue();
+            var leftBumper  =  gamepad.leftShoulder.ReadValue();
+            float slewSpeed = (rightBumper - leftBumper) * armMoveSpeed;
+            armControllers[(int)armParts.tankSpin_wheel].Speed = slewSpeed;
         }
-        else if (Input.GetKey(KeyCode.DownArrow))
-        {
-            SetArmSpeed(-armMoveSpeed);
-        }
-        else
-        {
-            SetArmSpeed(0);
-        }
+    }
+
+    void handleSlewGamepad() {
+
     }
 
     void SetArmSpeed(float speed)
@@ -233,6 +261,18 @@ public class ExcavatorScript : MonoBehaviour
         UpdateSelectedArmText();
     }
 
+    void gamepadSelectedArm(){
+        // selectedArmIndex = -1;
+        if (gamepad.xButton.wasPressedThisFrame) 
+            selectedArmIndex = (int)armParts.scoop1;
+        else if (gamepad.bButton.wasPressedThisFrame)
+            selectedArmIndex = (int)armParts.lower_arm;
+        else if (gamepad.yButton.wasPressedThisFrame)
+            selectedArmIndex = (int)armParts.plow1;
+        else if (gamepad.aButton.wasPressedThisFrame)
+            selectedArmIndex = (int)armParts.upperToLow;
+    }
+
     void UpdateSelectedArmText()
     {
         GameObject canvasBoard = GameObject.Find("canvasboard");
@@ -247,6 +287,8 @@ public class ExcavatorScript : MonoBehaviour
     // Method to move the tracks (called by the ROS subscriber)
     public void MoveExcavatorTracks(float leftTrackSpeed_, float rightTrackSpeed_)
     {
+        GameObject parentGameObject = transform.parent.gameObject;
+        // Debug.Log("Parent GameObject: " + parentGameObject.name);
 
         leftTrackSpeed = leftTrackSpeed_;
         rightTrackSpeed = rightTrackSpeed_;
