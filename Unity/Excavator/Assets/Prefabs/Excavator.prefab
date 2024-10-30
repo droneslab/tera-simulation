@@ -15705,7 +15705,7 @@ Transform:
   m_GameObject: {fileID: 9088247318780228642}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 15.16, y: 1.28, z: 13.6}
+  m_LocalPosition: {x: 5.98, y: 1.28, z: -2.61}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -15745,6 +15745,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cfa2d4e4a406586f8be2207c6b205f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  excavator: {fileID: 0}
+  excavatorName: 
   topicName: effector_pose
   publishMessageFrequency: 0.05
   efHandlerObject: {fileID: 7693564220076090493}

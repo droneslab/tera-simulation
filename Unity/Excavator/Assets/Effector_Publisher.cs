@@ -10,6 +10,8 @@ public class Effector_Publisher : MonoBehaviour
 {
     // Start is called before the first frame update
     ROSConnection ros;
+    public GameObject excavator;
+    public string excavatorName;
     public string topicName = "effector_pose";
     public float publishMessageFrequency = 0.5f;
     private float timeElapsed;
@@ -18,6 +20,9 @@ public class Effector_Publisher : MonoBehaviour
     Vector3 position,rotation;
     void Start()
     {
+        excavator = this.gameObject;
+        excavatorName = excavator.name;
+        topicName = excavatorName + "/" + topicName;
         ros = ROSConnection.instance;
         ros.RegisterPublisher<TransformMsg>(topicName);
         efHandler = efHandlerObject.GetComponent<Effector_Pose>();
