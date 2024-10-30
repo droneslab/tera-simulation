@@ -40,10 +40,10 @@ public class ExcavatorScript : MonoBehaviour
     {
         public float Time;
         public string RigidBody;
-        public Vector3 Force;
-        public Vector3 Torque;
+        public float Force;
+        public float Torque;
 
-        public ForceData(float time, string rigidBody, Vector3 force, Vector3 torque) {
+        public ForceData(float time, string rigidBody, float force, float torque) {
             Time = time;
             RigidBody = rigidBody;
             Force = force;
@@ -234,9 +234,9 @@ public class ExcavatorScript : MonoBehaviour
                         Vector3 force = new Vector3((float)rbf.x, (float)rbf.y, (float)rbf.z);
                         Vector3 torque = new Vector3((float)rbt.x, (float)rbt.y, (float)rbt.z);
                         if (armForces.ContainsKey(name)) {
-                            armForces[name] = new ForceData(Time.time, name, force, torque);
+                            armForces[name] = new ForceData(Time.time, name, force.magnitude, torque.magnitude);
                         } else {
-                            armForces.Add(name, new ForceData(Time.time, name, force, torque));
+                            armForces.Add(name, new ForceData(Time.time, name, force.magnitude, torque.magnitude));
                         }
 
                         // Debug.Log($"Force on RigidBody1: ({rbf.x}, {rbf.y}, {rbf.z})");

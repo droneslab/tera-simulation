@@ -2,6 +2,9 @@
     using AGXUnity;
     using AGXUnity.Utils;
     using System.Collections.Generic;
+    using Unity.Robotics.ROSTCPConnector;
+    using RosMessageTypes.Std;
+    using RosMessageTypes.BuiltinInterfaces;
 
     public class Excavator_Dynamics : ScriptComponent {
         public AGXUnity.Model.DeformableTerrainShovel shovel;
@@ -14,6 +17,7 @@
 
         private List<float> recentMassValues = new List<float>();
         private const int averageWindowSize = 10;
+        private ROSConnection ros;
 
         // test objects can be deleted
         public AGXUnity.RigidBody testObject;
@@ -37,6 +41,8 @@
         void Start() {
             excavatorScript = GetComponent<ExcavatorScript>();
             m_massOfBucket = shovel.GetComponent<AGXUnity.RigidBody>().MassProperties.Mass.Value;
+            ros = ROSConnection.GetOrCreateInstance();
+            ros.RegisterPublisher<Float32Msg>("Excavator/mass_in_bucket");
             Debug.Log("Dynamics..........");
         }
 
@@ -50,7 +56,7 @@
 
             // Calculation terrain mass from the force on shovel
             var armForces =  excavatorScript.GetArmForces();
-            float forceOnBucket = armForces["Bucket"].Force.magnitude;
+            float forceOnBucket = armForces["Bucket"].Force;
             m_massInBucket = (forceOnBucket / gravityAcceleration) - m_massOfBucket;
 
             recentMassValues.Add(m_massInBucket);
@@ -61,6 +67,9 @@
                 foreach (float mass in recentMassValues) averageBucketMass += mass;
                 averageBucketMass /= recentMassValues.Count;
                 Debug.Log("Mass : "+averageBucketMass);
+
+                Float32Msg massMsg = new Float32Msg(averageBucketMass);
+                ros.Publish("Excavator/mass_in_bucket", massMsg);
             }
 
             // //Calculating some object on the shovel

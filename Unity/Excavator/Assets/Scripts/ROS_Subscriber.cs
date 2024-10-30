@@ -31,7 +31,7 @@ public class ExcavatorROSSubscriber : MonoBehaviour
     void Start()
     {
         lookupOperation = new LookUp_Operation();
-        ROSConnection.GetOrCreateInstance().Subscribe<ExcavatorCommandMsg>("excavator_command_topic", OnExcavatorCommandReceived);
+        ROSConnection.GetOrCreateInstance().Subscribe<ExcavatorCommandMsg>("joy_deltacan", OnExcavatorCommandReceived);
     }
 
     float SystemDynamics()
