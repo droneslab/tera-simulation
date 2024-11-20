@@ -2,12 +2,11 @@
 #*.unity
 #*.meta
 # *.asset
-
 # Ignore Directory
 Unity/Excavator/Assets/YamlDotNet/
 Unity/Excavator/Logs/
 Unity/Excavator/Library/
-!Unity/Excavator/Library/PackageCache/com.frj.unity-sensors/Runtime/Scripts/Sensors/IMU/**
+!Unity/Excavator/Library/PackageCache/com.frj.unity-sensors/Runtime/Scripts/Sensors/IMU/IMUSensor.cs
 #Unity/Excavator/Assets/AGXUnity
 sim_ws/build/
 sim_ws/install/
