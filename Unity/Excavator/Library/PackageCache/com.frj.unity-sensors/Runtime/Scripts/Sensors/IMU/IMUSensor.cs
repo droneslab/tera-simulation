@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnitySensors.Attribute;
-///INCLUDE CHANGE
 
 namespace UnitySensors.Sensor.IMU
 {
