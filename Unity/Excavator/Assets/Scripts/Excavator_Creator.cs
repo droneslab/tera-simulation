@@ -108,7 +108,9 @@ public class Excavator_Creator : MonoBehaviour
     void Start()
     {
         var deserializer = new DeserializerBuilder().Build();
-        var yamlInput = File.ReadAllText("/home/moog/Moog/moog-simulation/moog-simulation/excavator_config.yaml");
+        string currentDirectory = Directory.GetCurrentDirectory();
+        string yamlPath = Path.Combine(currentDirectory,"..", "..", "excavator_config.yaml");
+        var yamlInput = File.ReadAllText(yamlPath);
         var excavatorList = deserializer.Deserialize<ExcavatorList>(yamlInput);
         
         foreach (var excavator in excavatorList.Excavator)

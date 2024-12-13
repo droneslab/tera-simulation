@@ -7,6 +7,9 @@ Unity/Excavator/Assets/YamlDotNet/
 Unity/Excavator/Logs/
 Unity/Excavator/Library/
 !Unity/Excavator/Library/PackageCache/com.frj.unity-sensors/Runtime/Scripts/Sensors/IMU/IMUSensor.cs
+!Unity/Excavator/Library/PackageCache/com.frj.unity-sensors/Runtime/Scripts/Sensors/IMU/IMUSensor.cs.meta
+!Unity/Excavator/Library/PackageCache/com.frj.unity-sensors-ros/Runtime/Scripts/Publishers/RosMsgPublisher.cs
+!Unity/Excavator/Library/PackageCache/com.frj.unity-sensors-ros/Runtime/Scripts/Publishers/RosMsgPublisher.cs.meta
 #Unity/Excavator/Assets/AGXUnity
 sim_ws/build/
 sim_ws/install/
