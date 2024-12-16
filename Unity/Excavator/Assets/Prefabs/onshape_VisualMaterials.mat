@@ -78,7 +78,7 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.23137255, g: 0.38039216, b: 0.7058824, a: 1}
+    - _Color: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
 --- !u!21 &231059081
@@ -149,7 +149,7 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _Metallic: 0
+    - _Metallic: 0.3
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
@@ -159,7 +159,7 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.98039216, g: 0.7137255, b: 0.003921569, a: 1}
+    - _Color: {r: 0.84705883, g: 0.84705883, b: 0.84705883, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
 --- !u!21 &375687910
@@ -240,7 +240,7 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.91764706, g: 0.91764706, b: 0.91764706, a: 1}
+    - _Color: {r: 0.2901961, g: 0.2901961, b: 0.2901961, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
 --- !u!21 &536728974
@@ -321,7 +321,7 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.23137255, g: 0.38039216, b: 0.7058824, a: 1}
+    - _Color: {r: 0.2901961, g: 0.2901961, b: 0.2901961, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
 --- !u!21 &803538939
@@ -402,7 +402,7 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.49803922, g: 0.49803922, b: 0.49803922, a: 1}
+    - _Color: {r: 0.2901961, g: 0.2901961, b: 0.2901961, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
 --- !u!21 &871373867
@@ -483,7 +483,7 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.91764706, g: 0.91764706, b: 0.91764706, a: 1}
+    - _Color: {r: 0.2901961, g: 0.2901961, b: 0.2901961, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
 --- !u!21 &874247124
@@ -554,7 +554,7 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _Metallic: 0
+    - _Metallic: 0.3
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
@@ -564,7 +564,7 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.76862746, g: 0.8862745, b: 0.9529412, a: 1}
+    - _Color: {r: 0.84705883, g: 0.84705883, b: 0.84705883, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
 --- !u!21 &1170715959
@@ -645,7 +645,7 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.49803922, g: 0.49803922, b: 0.49803922, a: 1}
+    - _Color: {r: 0.84705883, g: 0.84705883, b: 0.84705883, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
 --- !u!21 &1192598172
@@ -726,7 +726,7 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.49803922, g: 0.49803922, b: 0.49803922, a: 1}
+    - _Color: {r: 0.2901961, g: 0.2901961, b: 0.2901961, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
 --- !u!21 &1359588128
@@ -807,7 +807,7 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.49803922, g: 0.49803922, b: 0.49803922, a: 1}
+    - _Color: {r: 0.2901961, g: 0.2901961, b: 0.2901961, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
 --- !u!21 &1395722323
@@ -888,7 +888,7 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.6156863, g: 0.8117647, b: 0.92941177, a: 1}
+    - _Color: {r: 0.2901961, g: 0.2901961, b: 0.2901961, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
 --- !u!21 &1470237395
@@ -957,9 +957,9 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _GlossMapScale: 1
-    - _Glossiness: 0.5
+    - _Glossiness: 0.2
     - _GlossyReflections: 1
-    - _Metallic: 0
+    - _Metallic: 0.6
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
@@ -969,7 +969,7 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.6156863, g: 0.8117647, b: 0.92941177, a: 1}
+    - _Color: {r: 0.15686275, g: 0.15686275, b: 0.15686275, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
 --- !u!21 &1484881906
@@ -1050,7 +1050,7 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.91764706, g: 0.91764706, b: 0.91764706, a: 1}
+    - _Color: {r: 0.2901961, g: 0.2901961, b: 0.2901961, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
 --- !u!21 &1488886015
@@ -1131,7 +1131,7 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.49803922, g: 0.49803922, b: 0.49803922, a: 1}
+    - _Color: {r: 0.2901961, g: 0.2901961, b: 0.2901961, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
 --- !u!21 &1525369294
@@ -1212,7 +1212,7 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.6156863, g: 0.8117647, b: 0.92941177, a: 1}
+    - _Color: {r: 0.81960785, g: 0.14117648, b: 0.105882354, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
 --- !u!21 &1545023663
@@ -1293,7 +1293,7 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.49803922, g: 0.49803922, b: 0.49803922, a: 1}
+    - _Color: {r: 0.2901961, g: 0.2901961, b: 0.2901961, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
 --- !u!21 &1584666508
@@ -1364,7 +1364,7 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _Metallic: 0
+    - _Metallic: 0.3
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
@@ -1374,7 +1374,7 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.7764706, g: 0.75686276, b: 0.7372549, a: 1}
+    - _Color: {r: 0.84705883, g: 0.84705883, b: 0.84705883, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
 --- !u!21 &1605132435
@@ -1455,7 +1455,7 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.91764706, g: 0.91764706, b: 0.91764706, a: 1}
+    - _Color: {r: 0.2901961, g: 0.2901961, b: 0.2901961, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
 --- !u!21 &1756130374
@@ -1536,7 +1536,7 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.49803922, g: 0.49803922, b: 0.49803922, a: 1}
+    - _Color: {r: 0.2901961, g: 0.2901961, b: 0.2901961, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
 --- !u!21 &1815071059
@@ -1617,7 +1617,7 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.91764706, g: 0.91764706, b: 0.91764706, a: 1}
+    - _Color: {r: 0.2901961, g: 0.2901961, b: 0.2901961, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
 --- !u!21 &1870681863
@@ -1698,7 +1698,7 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.98039216, g: 0.7137255, b: 0.003921569, a: 1}
+    - _Color: {r: 0.2901961, g: 0.2901961, b: 0.2901961, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
 --- !u!21 &2005358499
@@ -1779,6 +1779,6 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.23137255, g: 0.38039216, b: 0.7058824, a: 1}
+    - _Color: {r: 0.2901961, g: 0.2901961, b: 0.2901961, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []

@@ -1153,7 +1153,7 @@ MonoBehaviour:
     m_userValue: {x: -2.7108604e-32, y: 0, z: 0}
   m_centerOfMassOffset:
     m_defaultToggle: 0
-    m_defaultValue: {x: 0.25000003, y: -0.00000003414863, z: -0.024479473}
+    m_defaultValue: {x: 0.25, y: -0.0000000043463073, z: -0.024479473}
     m_userValue: {x: 0.25, y: -2.605478e-15, z: -0.024479607}
   m_massCoefficients: {x: 0, y: 0, z: 0}
   m_inertiaCoefficients: {x: 0, y: 0, z: 0}
@@ -12285,7 +12285,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9238543d92ec5e98d84ea46d19419003, type: 2}
+  - {fileID: 2100000, guid: 53bdf30d6b7bd35dd85b04c870acc6ca, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
