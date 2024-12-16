@@ -19,9 +19,9 @@ Excavator:
           mean: 0.1
           std_dev: 0.01
         offset: 
-          x: 0.3436
+          x: 1.408
           y: 0.15
-          z: -0.2921
+          z: -0.006
         rotation: 
           x: 0
           y: -90
@@ -47,9 +47,9 @@ Excavator:
           mean: 0.1
           std_dev: 0.01
         offset: 
-          x: 0.3436
+          x: 1.408
           y: 0.15
-          z: -0.2921
+          z: -0.006
         rotation: 
           x: 0
           y: -90
