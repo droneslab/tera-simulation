@@ -5711,6 +5711,7 @@ GameObject:
   - component: {fileID: 4777897683768698599}
   - component: {fileID: 4286773277994481827}
   - component: {fileID: 4423207059116854923}
+  - component: {fileID: 5478530811841422269}
   m_Layer: 0
   m_Name: onshape
   m_TagString: Untagged
@@ -5818,6 +5819,21 @@ MonoBehaviour:
   gameObject: {fileID: 0}
   sensitivity: 10
   followSpeed: 5
+--- !u!114 &5478530811841422269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4146021004321436623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2a99ebe2297b79f9ac3aa7ff8ae790e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shovel: {fileID: 4720135261908295413}
+  box: {fileID: 0}
+  testObject: {fileID: 0}
 --- !u!1 &4172220710189846488
 GameObject:
   m_ObjectHideFlags: 0
