@@ -45,19 +45,21 @@ cd moog-simulation
 
 2. Ensure that the AGX Dynamics for Unity plugin downloaded earlier is installed by going to the menu bar and selecting **Assets -> Import Package -> Custom Package**.
 
-### Import Assets
+> You should see `AGXUnity`,`Robotics` and `UnitySensors` on the ribbon
+
+<!-- ### Import Assets
 1. In the Unity menu bar, go to **Window -> Asset Manager**
 2. Select the **Excavator** file you want to import
 3. Hit the dropdown in the bottom right. Press **Import To**
-4. Import it to `<Project_Folder>\Unity\Excavator\Assets\Prefab`
+4. Import it to `<Project_Folder>\Unity\Excavator\Assets\Prefab` -->
 
 ### Configuring ROS TCP Endpoint
-1. After the packages are installed, the **Robotics** option will appear in the Unity menu bar and Open it to configure ROS settings and ROS Messages.
+1. Click on the **Robotics** option to configure ROS settings and ROS Messages.
    ![image](https://github.com/user-attachments/assets/038e8f9d-c628-41d0-bf91-d7e2ec2cbbc7)
-2. Generate Custom ROSMessages inside Unity by specifying the path to Deltcan package folder from the cloned repository.
+2. If `/joy_deltacan` is not present then generate Custom ROSMessages inside Unity by specifying the path to `Deltcan` package folder from the cloned repository.
 
 ### AGX Setup
-1. Activate AGX License using AGX License Manager in AGXUnity Menu Bar by providing License ID and Activation Code. This will create `agx.lfc` License file which can be used for other projects.
+1. Activate AGX License using AGX License Manager by clicking `AGXUnity-> License -> License Manager`. Input your ID and Activation Code. This will create `agx.lfc` License file which can be used for other projects.
 2. AGX Troubleshooting - **AGXUnity -> Utils -> Update Cleanup**
 
 ### ROS2 Setup
@@ -70,11 +72,11 @@ cd moog-simulation
    source install/setup.bash
    ```
 2. After building the workspace, establish the connection between Unity and ROS2 by running the following command:
-   If you are running default IP addresses and ports you can just run the launch file
+   If you are running default IP addresses and ports you can just run the run file
    ```bash
-   ros2 launch ros_tcp_endpoint params.py
+   ros2 run ros_tcp_endpoint default_server_endpoint
    ```
-   or if you need to specify an IP address or port
+   If you need custom addresses/ports use
    ```bash
    ros2 run ros_tcp_endpoint default_server_endpoint --ros-args -p ROS_IP:=<your_IP_address> -p ROS_TCP_PORT:=<your_port>
    ```
