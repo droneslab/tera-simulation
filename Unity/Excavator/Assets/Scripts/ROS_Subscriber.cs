@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.Robotics.ROSTCPConnector;
 using ExcavatorCommandMsg = RosMessageTypes.Deltacan.DeltaCanMsg;
+using ExcavatorPoseMsg = RosMessageTypes.Geometry.PoseMsg;
 using AGXUnity;
+using UnityEngine.SceneManagement;
 
 public class ExcavatorROSSubscriber : MonoBehaviour
 {
@@ -32,6 +34,7 @@ public class ExcavatorROSSubscriber : MonoBehaviour
     {
         lookupOperation = new LookUp_Operation();
         ROSConnection.GetOrCreateInstance().Subscribe<ExcavatorCommandMsg>("joy_deltacan", OnExcavatorCommandReceived);
+        ROSConnection.GetOrCreateInstance().Subscribe<ExcavatorPoseMsg>("joy_pose", OnSceneCommandReceived);
     }
 
     float SystemDynamics()
@@ -51,6 +54,15 @@ public class ExcavatorROSSubscriber : MonoBehaviour
         response = (1 + Mathf.Sin(B * deltaTime) * Mathf.Exp(-C * deltaTime));
 
         return response;
+    }
+
+    void OnSceneCommandReceived(ExcavatorPoseMsg commandMessage)
+    {
+        if (excavatorScript != null)
+        {
+            Debug.Log($"Received Excavator Pose: {commandMessage}");
+            SceneManager.LoadSceneAsync("GymScene");
+        }
     }
 
     void OnExcavatorCommandReceived(ExcavatorCommandMsg commandMessage)

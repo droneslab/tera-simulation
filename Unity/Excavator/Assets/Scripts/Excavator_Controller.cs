@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System;
 using UnityEngine.InputSystem.XInput;
 using UnityEngine.InputSystem;
+using System;
 
 public class ExcavatorScript : MonoBehaviour
 {
@@ -232,6 +233,9 @@ public class ExcavatorScript : MonoBehaviour
                     if (nativeConstraint.getLastForce(nativeConstraint.getBodyAt(0), ref rbf, ref rbt))
                     {
                         Vector3 force = new Vector3((float)rbf.x, (float)rbf.y, (float)rbf.z);
+                        double forceMagnitude = System.Math.Sqrt(force.x * force.x + force.y * force.y + force.z * force.z);
+                        // Debug.Log($"Force Magnitude on {name}: {forceMagnitude}");
+                        // Debug.Log(force.magnitude);
                         Vector3 torque = new Vector3((float)rbt.x, (float)rbt.y, (float)rbt.z);
                         if (armForces.ContainsKey(name)) {
                             armForces[name] = new ForceData(Time.time, name, force.magnitude, torque.magnitude);
