@@ -30,6 +30,7 @@ public class Excavator_Dynamics : ScriptComponent {
         private agxCollide.Geometry shovelGeometry;
         private TwistMsg twistMessage;
         private Float32Msg massMessage;
+        public string topicName = "mass_in_bucket";
 
     // protected override bool Initialize()
     // {
@@ -50,9 +51,11 @@ public class Excavator_Dynamics : ScriptComponent {
         excavatorScript = GetComponent<ExcavatorScript>();
         m_massOfBucket = shovel.GetComponent<AGXUnity.RigidBody>().MassProperties.Mass.Value;
         ros = ROSConnection.GetOrCreateInstance();
-        ros.RegisterPublisher<Float32Msg>("Excavator/mass_in_bucket");
-        ros.RegisterPublisher<TwistMsg>("Excavator/left_sprocket_velocity");
-        ros.RegisterPublisher<TwistMsg>("Excavator/right_sprocket_velocity");
+        topicName = "Excavator" + "/" + topicName;
+        Debug.Log("Registering publisher for topic: " + topicName);
+        ros.RegisterPublisher<Float32Msg>(topicName);
+        // ros.RegisterPublisher<TwistMsg>("Excavator/left_sprocket_velocity");
+        // ros.RegisterPublisher<TwistMsg>("Excavator/right_sprocket_velocity");
         twistMessage = new TwistMsg();
         massMessage = new Float32Msg();
     }
@@ -68,7 +71,11 @@ public class Excavator_Dynamics : ScriptComponent {
 
         // Calculation terrain mass from the force on shovel
         var armForces = excavatorScript.GetArmForces();
-        float forceOnBucket = armForces["Bucket"].Force;
+        Debug.Log(".......................................... armforces: " + armForces.Count);
+        Debug.Log(".......................................... armforces bucket: " + armForces.ContainsKey("Bucket"));
+        float forceOnBucket = 0;
+        if (armForces.ContainsKey("Bucket") == true)
+            forceOnBucket = armForces["Bucket"].Force;
         m_massInBucket = (forceOnBucket / gravityAcceleration) - m_massOfBucket;
 
         recentMassValues.Add(m_massInBucket);
@@ -85,12 +92,12 @@ public class Excavator_Dynamics : ScriptComponent {
 
         // Calculating angular velocity of the sprockets
 
-        twistMessage.linear = new Vector3Msg(leftSprocket.LinearVelocity.x, leftSprocket.LinearVelocity.y, leftSprocket.LinearVelocity.z);
-        twistMessage.angular = new Vector3Msg(leftSprocket.AngularVelocity.x, leftSprocket.AngularVelocity.y, leftSprocket.AngularVelocity.z);
-        ros.Publish("Excavator/left_sprocket_velocity", twistMessage);
+        // twistMessage.linear = new Vector3Msg(leftSprocket.LinearVelocity.x, leftSprocket.LinearVelocity.y, leftSprocket.LinearVelocity.z);
+        // twistMessage.angular = new Vector3Msg(leftSprocket.AngularVelocity.x, leftSprocket.AngularVelocity.y, leftSprocket.AngularVelocity.z);
+        // ros.Publish("Excavator/left_sprocket_velocity", twistMessage);
 
-        twistMessage.linear = new Vector3Msg(rightSprocket.LinearVelocity.x, rightSprocket.LinearVelocity.y, rightSprocket.LinearVelocity.z);
-        twistMessage.angular = new Vector3Msg(rightSprocket.AngularVelocity.x, rightSprocket.AngularVelocity.y, rightSprocket.AngularVelocity.z);
-        ros.Publish("Excavator/right_sprocket_velocity", twistMessage);
+        // twistMessage.linear = new Vector3Msg(rightSprocket.LinearVelocity.x, rightSprocket.LinearVelocity.y, rightSprocket.LinearVelocity.z);
+        // twistMessage.angular = new Vector3Msg(rightSprocket.AngularVelocity.x, rightSprocket.AngularVelocity.y, rightSprocket.AngularVelocity.z);
+        // ros.Publish("Excavator/right_sprocket_velocity", twistMessage);
     }
 }

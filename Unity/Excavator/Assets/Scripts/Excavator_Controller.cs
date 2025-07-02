@@ -19,7 +19,7 @@ public class ExcavatorScript : MonoBehaviour
     private Gamepad gamepad;
 
     // Track Variables
-    private float forwardSpeed = 3f;
+    private float forwardSpeed = 5f;
     private TargetSpeedController leftController;
     private TargetSpeedController rightController;
     private float leftTrackSpeed = 0f;
@@ -175,7 +175,10 @@ public class ExcavatorScript : MonoBehaviour
             gamepadSelectedArm();
             handleSlewGamepad();
         }
+    }
 
+    void FixedUpdate()
+    {
         // Log the forces and torques applied to the arm parts
         LogArmForces();
     }
@@ -216,40 +219,52 @@ public class ExcavatorScript : MonoBehaviour
     }
 
     void LogArmForces()
-{
-    foreach (armParts part in Enum.GetValues(typeof(armParts)))
     {
-        GameObject armPart = armGameObjects[(int)part];
-        if (armPart != null)
+        Debug.Log("Logging forces and torques for arm parts...");
+        foreach (armParts part in Enum.GetValues(typeof(armParts)))
         {
-            var armConstraint = armPart.GetComponent<AGXUnity.Constraint>();
-            var name = GetDisplayName(part);
-            if (armConstraint != null)
+            GameObject armPart = armGameObjects[(int)part];
+            if (armPart != null)
             {
-                var nativeConstraint = armConstraint.Native as agx.Constraint;
-                // Debug.Log(nativeConstraint.getBodyAt(0).getMassProperties().getMass() + " , " + name);
-                if (nativeConstraint != null)
+                var armConstraint = armPart.GetComponent<AGXUnity.Constraint>();
+                var name = GetDisplayName(part);
+                if (armConstraint != null)
                 {
-                    if (nativeConstraint.getLastForce(nativeConstraint.getBodyAt(0), ref rbf, ref rbt))
+                    Debug.Log("Processing arm part: " + part.ToString());
+                    Debug.Log("Arm part name: " + name);
+                    var nativeConstraint = armConstraint.Native as agx.Constraint;
+                    // Debug.Log(nativeConstraint.getBodyAt(0).getMassProperties().getMass() + " , " + name);
+                    if (nativeConstraint != null)
                     {
-                        Vector3 force = new Vector3((float)rbf.x, (float)rbf.y, (float)rbf.z);
-                        double forceMagnitude = System.Math.Sqrt(force.x * force.x + force.y * force.y + force.z * force.z);
-                        // Debug.Log($"Force Magnitude on {name}: {forceMagnitude}");
-                        // Debug.Log(force.magnitude);
-                        Vector3 torque = new Vector3((float)rbt.x, (float)rbt.y, (float)rbt.z);
-                        if (armForces.ContainsKey(name)) {
-                            armForces[name] = new ForceData(Time.time, name, force.magnitude, torque.magnitude);
-                        } else {
-                            armForces.Add(name, new ForceData(Time.time, name, force.magnitude, torque.magnitude));
-                        }
+                        Debug.Log("Arm part name: if " + name);
+                        Debug.Log("Native getBodyAt: " + nativeConstraint.getBodyAt(0).getName());
+                        Debug.Log("Native getforce: " + nativeConstraint.getLastForce(nativeConstraint.getBodyAt(0), ref rbf, ref rbt));
+                        bool hasForce = nativeConstraint.getLastForce(nativeConstraint.getBodyAt(0), ref rbf, ref rbt);
+                        Debug.Log($"{name} getLastForce: {hasForce}, force: ({rbf.x}, {rbf.y}, {rbf.z})");
 
-                        // Debug.Log($"Force on RigidBody1: ({rbf.x}, {rbf.y}, {rbf.z})");
-                        // Debug.Log($"Torque on RigidBody1: ({rbt.x}, {rbt.y}, {rbt.z})");
+                        if (nativeConstraint.getLastForce(nativeConstraint.getBodyAt(0), ref rbf, ref rbt))
+                        {
+                            Debug.Log("Arm part name: if if " + name);
+                            Vector3 force = new Vector3((float)rbf.x, (float)rbf.y, (float)rbf.z);
+                            Vector3 torque = new Vector3((float)rbt.x, (float)rbt.y, (float)rbt.z);
+                            if (armForces.ContainsKey(name) == true)
+                            {
+                                armForces[name] = new ForceData(Time.time, name, force.magnitude, torque.magnitude);
+                            }
+                            else
+                            {
+                                Debug.Log("................. Adding new force data for " + name);
+                                armForces.Add(name, new ForceData(Time.time, name, force.magnitude, torque.magnitude));
+                            }
+
+                            // Debug.Log($"Force on RigidBody1: ({rbf.x}, {rbf.y}, {rbf.z})");
+                            // Debug.Log($"Torque on RigidBody1: ({rbt.x}, {rbt.y}, {rbt.z})");
+                        }
                     }
                 }
             }
         }
-    }
+        Debug.Log("Force logging completed."+ " Total arm parts logged: " + armForces.Count);
 }
 
 

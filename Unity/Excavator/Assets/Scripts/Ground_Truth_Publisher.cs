@@ -49,16 +49,20 @@ public class Ground_Truth_Publisher : MonoBehaviour
     void Update()
     {
         Dictionary<string, ExcavatorScript.ForceData> armEfforts = excavatorController.GetArmForces();
-        cabin_effort = armEfforts["Slew"].Torque;
+        if(armEfforts.ContainsKey("Slew") == true)
+            cabin_effort = armEfforts["Slew"].Torque;
         boom_angle = gtHandler.boom_angle;
         boom_angular_velocity = gtHandler.boom_angular_velocity;
-        boom_effort = armEfforts["Boom"].Torque;
+        if(armEfforts.ContainsKey("Boom") == true)
+            boom_effort = armEfforts["Boom"].Torque;
         arm_angle = gtHandler.arm_angle;
         arm_angular_velocity = gtHandler.arm_angular_velocity; 
-        arm_effort = armEfforts["Arm"].Torque;
+        if(armEfforts.ContainsKey("Arm") == true)
+            arm_effort = armEfforts["Arm"].Torque;
         bucket_angle = gtHandler.bucket_angle;
         bucket_angular_velocity = gtHandler.bucket_angular_velocity;
-        bucket_effort = armEfforts["Bucket"].Torque;
+        if(armEfforts.ContainsKey("Bucket") == true)
+            bucket_effort = armEfforts["Bucket"].Torque;
 
         JointStateMsg msg = new JointStateMsg
         {

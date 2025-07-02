@@ -24,6 +24,7 @@ public class Effector_Publisher : MonoBehaviour
         excavatorName = excavator.name;
         topicName = excavatorName + "/" + topicName;
         ros = ROSConnection.instance;
+        Debug.Log("Registering publisher for topic: " + topicName);
         ros.RegisterPublisher<TransformMsg>(topicName);
         efHandler = efHandlerObject.GetComponent<Effector_Pose>();
     }
