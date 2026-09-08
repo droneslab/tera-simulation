@@ -1,0 +1,221 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/moog-2/christo/release/moog-simulation/Unity/Excavator/Assembly-CSharp-Editor.csproj": {}
+  },
+  "projects": {
+    "/home/moog-2/christo/release/moog-simulation/Unity/Excavator/AGXUnity.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/moog-2/christo/release/moog-simulation/Unity/Excavator/AGXUnity.csproj",
+        "projectName": "AGXUnity",
+        "projectPath": "/home/moog-2/christo/release/moog-simulation/Unity/Excavator/AGXUnity.csproj",
+        "packagesPath": "/home/moog-2/.nuget/packages/",
+        "outputPath": "/home/moog-2/christo/release/moog-simulation/Unity/Excavator/Temp/obj/Debug/AGXUnity/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/moog-2/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.122/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/moog-2/christo/release/moog-simulation/Unity/Excavator/AGXUnityEditor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/moog-2/christo/release/moog-simulation/Unity/Excavator/AGXUnityEditor.csproj",
+        "projectName": "AGXUnityEditor",
+        "projectPath": "/home/moog-2/christo/release/moog-simulation/Unity/Excavator/AGXUnityEditor.csproj",
+        "packagesPath": "/home/moog-2/.nuget/packages/",
+        "outputPath": "/home/moog-2/christo/release/moog-simulation/Unity/Excavator/Temp/obj/Debug/AGXUnityEditor/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/moog-2/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "/home/moog-2/christo/release/moog-simulation/Unity/Excavator/AGXUnity.csproj": {
+                "projectPath": "/home/moog-2/christo/release/moog-simulation/Unity/Excavator/AGXUnity.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.122/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/moog-2/christo/release/moog-simulation/Unity/Excavator/Assembly-CSharp-Editor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/moog-2/christo/release/moog-simulation/Unity/Excavator/Assembly-CSharp-Editor.csproj",
+        "projectName": "Assembly-CSharp-Editor",
+        "projectPath": "/home/moog-2/christo/release/moog-simulation/Unity/Excavator/Assembly-CSharp-Editor.csproj",
+        "packagesPath": "/home/moog-2/.nuget/packages/",
+        "outputPath": "/home/moog-2/christo/release/moog-simulation/Unity/Excavator/Temp/obj/Debug/Assembly-CSharp-Editor/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/moog-2/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "/home/moog-2/christo/release/moog-simulation/Unity/Excavator/AGXUnity.csproj": {
+                "projectPath": "/home/moog-2/christo/release/moog-simulation/Unity/Excavator/AGXUnity.csproj"
+              },
+              "/home/moog-2/christo/release/moog-simulation/Unity/Excavator/AGXUnityEditor.csproj": {
+                "projectPath": "/home/moog-2/christo/release/moog-simulation/Unity/Excavator/AGXUnityEditor.csproj"
+              },
+              "/home/moog-2/christo/release/moog-simulation/Unity/Excavator/Assembly-CSharp.csproj": {
+                "projectPath": "/home/moog-2/christo/release/moog-simulation/Unity/Excavator/Assembly-CSharp.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.122/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/moog-2/christo/release/moog-simulation/Unity/Excavator/Assembly-CSharp.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/moog-2/christo/release/moog-simulation/Unity/Excavator/Assembly-CSharp.csproj",
+        "projectName": "Assembly-CSharp",
+        "projectPath": "/home/moog-2/christo/release/moog-simulation/Unity/Excavator/Assembly-CSharp.csproj",
+        "packagesPath": "/home/moog-2/.nuget/packages/",
+        "outputPath": "/home/moog-2/christo/release/moog-simulation/Unity/Excavator/Temp/obj/Debug/Assembly-CSharp/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/moog-2/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "/home/moog-2/christo/release/moog-simulation/Unity/Excavator/AGXUnity.csproj": {
+                "projectPath": "/home/moog-2/christo/release/moog-simulation/Unity/Excavator/AGXUnity.csproj"
+              },
+              "/home/moog-2/christo/release/moog-simulation/Unity/Excavator/AGXUnityEditor.csproj": {
+                "projectPath": "/home/moog-2/christo/release/moog-simulation/Unity/Excavator/AGXUnityEditor.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.122/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

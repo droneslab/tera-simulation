@@ -19,3 +19,17 @@ Unity/Excavator/Assets/agx.lfx.meta
 Unity/Excavator/Assets/agx (1).lfx
 Unity/Excavator/Assets/agx (1).lfx.meta
 sim_ws/*.vscode
+
+# Local secrets and machine-bound license files
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+*.lfc
+*.lfx
+*.lic
+*secret*
+*token*
+*credential*

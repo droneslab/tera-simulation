@@ -105,6 +105,185 @@ public class Excavator_Creator : MonoBehaviour
         return null;
     }
 
+    FieldInfo FindFieldInHierarchy(Type type, string fieldName)
+    {
+        while (type != null)
+        {
+            FieldInfo field = type.GetField(fieldName, BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance);
+            if (field != null)
+            {
+                return field;
+            }
+            type = type.BaseType;
+        }
+
+        return null;
+    }
+
+    string NormalizeTopic(string topic)
+    {
+        if (string.IsNullOrWhiteSpace(topic))
+        {
+            return "/";
+        }
+
+        return "/" + topic.Trim('/');
+    }
+
+    string BuildNamespacedTopic(string excavatorId, string sensorTopic)
+    {
+        string topic = string.IsNullOrWhiteSpace(sensorTopic) ? string.Empty : sensorTopic.Trim('/');
+        return NormalizeTopic(excavatorId + "/" + topic);
+    }
+
+    string BuildNamespacedCameraTopic(string excavatorId, string sensorTopic, string originalTopic)
+    {
+        string namespacedBase = BuildNamespacedTopic(excavatorId, sensorTopic);
+        string normalizedOriginal = NormalizeTopic(originalTopic);
+        const string cameraRoot = "/camera";
+
+        if (normalizedOriginal.StartsWith(cameraRoot + "/"))
+        {
+            return NormalizeCameraInfoTopic(namespacedBase + normalizedOriginal.Substring(cameraRoot.Length));
+        }
+
+        return NormalizeCameraInfoTopic(NormalizeTopic(excavatorId + "/" + normalizedOriginal.Trim('/')));
+    }
+
+    string NormalizeCameraInfoTopic(string topicName)
+    {
+        if (topicName.EndsWith("/info"))
+        {
+            return topicName.Substring(0, topicName.Length - "/info".Length) + "/camera_info";
+        }
+
+        return topicName;
+    }
+
+    string BuildSensorFrameId(string excavatorId, Sensor sensor)
+    {
+        return excavatorId + "/" + sensor.id + "_frame";
+    }
+
+    void SetSerializerHeaderFrameId(Component publisherComponent, string frameId)
+    {
+        FieldInfo serializerField = FindFieldInHierarchy(publisherComponent.GetType(), "_serializer");
+        if (serializerField == null)
+        {
+            return;
+        }
+
+        object serializer = serializerField.GetValue(publisherComponent);
+        if (serializer == null)
+        {
+            return;
+        }
+
+        FieldInfo headerField = FindFieldInHierarchy(serializer.GetType(), "_header");
+        if (headerField == null)
+        {
+            return;
+        }
+
+        object header = headerField.GetValue(serializer);
+        if (header == null)
+        {
+            return;
+        }
+
+        FieldInfo frameIdField = FindFieldInHierarchy(header.GetType(), "_frame_id");
+        if (frameIdField != null && frameIdField.FieldType == typeof(string))
+        {
+            frameIdField.SetValue(header, frameId);
+        }
+    }
+
+    void SetSensorPublisherTopics(GameObject sensorObject, string excavatorId, Sensor sensor)
+    {
+        List<Tuple<Component, FieldInfo, string>> topicPublishers = new List<Tuple<Component, FieldInfo, string>>();
+        Component[] components = sensorObject.GetComponentsInChildren<Component>(true);
+
+        foreach (Component component in components)
+        {
+            if (component == null)
+            {
+                continue;
+            }
+
+            FieldInfo topicField = FindFieldInHierarchy(component.GetType(), "_topicName");
+            if (topicField == null || topicField.FieldType != typeof(string))
+            {
+                continue;
+            }
+
+            string originalTopic = topicField.GetValue(component) as string;
+            topicPublishers.Add(Tuple.Create(component, topicField, originalTopic));
+        }
+
+        if (topicPublishers.Count == 0)
+        {
+            Debug.LogWarning($"No '_topicName' publisher fields found on sensor '{sensor.id}' of type '{sensor.type}'");
+            return;
+        }
+
+        bool multiTopicSensor = topicPublishers.Count > 1;
+        string frameId = BuildSensorFrameId(excavatorId, sensor);
+        foreach (Tuple<Component, FieldInfo, string> publisher in topicPublishers)
+        {
+            string topicName = multiTopicSensor
+                ? BuildNamespacedCameraTopic(excavatorId, sensor.topic, publisher.Item3)
+                : BuildNamespacedTopic(excavatorId, sensor.topic);
+
+            publisher.Item2.SetValue(publisher.Item1, topicName);
+            SetSerializerHeaderFrameId(publisher.Item1, frameId);
+            Debug.Log($"Sensor '{sensor.id}' publishing '{publisher.Item3}' as '{topicName}'");
+        }
+    }
+
+    void AddSensorDebugGizmo(GameObject sensorObject, string excavatorId, Sensor sensor)
+    {
+        SensorDebugGizmo gizmo = sensorObject.GetComponent<SensorDebugGizmo>();
+        if (gizmo == null)
+        {
+            gizmo = sensorObject.AddComponent<SensorDebugGizmo>();
+        }
+
+        gizmo.label = excavatorId + "/" + sensor.id;
+        gizmo.color = sensor.type == "RGB_CAMERA" || sensor.type == "RGBD_CAMERA" ? Color.yellow : Color.cyan;
+    }
+
+    void ConfigureDirectCameraImagePublisher(GameObject sensorObject, string excavatorId, Sensor sensor)
+    {
+        if (sensor.type != "RGB_CAMERA")
+        {
+            return;
+        }
+
+        string topicName = BuildNamespacedCameraTopic(excavatorId, sensor.topic, "/camera/color/image/compressed");
+        CameraCompressedImagePublisher imagePublisher = sensorObject.GetComponent<CameraCompressedImagePublisher>();
+        if (imagePublisher == null)
+        {
+            imagePublisher = sensorObject.AddComponent<CameraCompressedImagePublisher>();
+        }
+
+        imagePublisher.topicName = topicName;
+        imagePublisher.frameId = BuildSensorFrameId(excavatorId, sensor);
+
+        Component[] components = sensorObject.GetComponents<Component>();
+        foreach (Component component in components)
+        {
+            if (component != null && component.GetType().Name == "CameraImageMsgPublisher")
+            {
+                MonoBehaviour monoBehaviour = component as MonoBehaviour;
+                if (monoBehaviour != null)
+                {
+                    monoBehaviour.enabled = false;
+                    Debug.Log($"Disabled generic CameraImageMsgPublisher on '{sensorObject.name}'");
+                }
+            }
+        }
+    }
+
     void Start()
     {
         var deserializer = new DeserializerBuilder().Build();
@@ -128,35 +307,28 @@ public class Excavator_Creator : MonoBehaviour
             {
                 // Debug.Log($"Sensor ID: {sensor.id}, Type: {sensor.type}, Location: {sensor.location}, Offset: x={sensor.offset.x}, y={sensor.offset.y}, z={sensor.offset.z}, Rotation: x={sensor.rotation.x}, y={sensor.rotation.y}, z={sensor.rotation.z}");
                 GameObject sensorObject = null;
-                Component componentTransform = null;
                 switch (sensor.type)
                 {
                     case "IMU":
                         sensorObject = Instantiate(IMUPrefab);
-                        componentTransform = sensorObject.GetComponent("IMUMsgPublisher");
                         // sensorObject.SetNoise(sensor.noise.mean, sensor.noise.std_dev);
                         break;
                     case "GPS":
                         sensorObject = Instantiate(GPSPrefab);
-                        componentTransform = sensorObject.GetComponent("NavSatFixMsgPublisher");
                         break;
                     case "RGB_CAMERA":
                         sensorObject = Instantiate(RGBCameraPrefab);
-                        componentTransform = sensorObject.GetComponent("CameraImageMsgPublisher");
                         break;
                     case "RGBD_CAMERA":
                         sensorObject = Instantiate(RGBDCameraPrefab);
-                        componentTransform = sensorObject.GetComponent("ImageMsgPublisher");
                         break;
                     case "LIDAR":
                         sensorObject = Instantiate(LidarPrefab);
-                        Transform sensorChild = sensorObject.transform.Find("Sensor");
-                        componentTransform = sensorChild.GetComponent("RaycastLiDARPointCloud2MsgPublisher");
                         break;
                 }
                 if (sensorObject != null)
                 {
-                    sensorObject.name = sensor.id;
+                    sensorObject.name = excavator.id + "_" + sensor.id;
                     // PrintHierarchy(sensorObject.transform);
                     switch (sensor.location)
                     {
@@ -176,19 +348,9 @@ public class Excavator_Creator : MonoBehaviour
                     }
                     sensorObject.transform.localPosition = new Vector3((float)sensor.offset.x, (float)sensor.offset.y, (float)sensor.offset.z);
                     sensorObject.transform.localRotation = Quaternion.Euler((float)sensor.rotation.x, (float)sensor.rotation.y, (float)sensor.rotation.z);
-                }
-                if (componentTransform != null)
-                {
-                    // Debug.Log($"Component Name: {componentTransform.GetType().Name}");
-                    FieldInfo topicField = componentTransform.GetType().GetField("_topicName", BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance);
-                    if (topicField != null)
-                    {
-                        topicField.SetValue(componentTransform, "/" + excavator.id + sensor.topic);
-                    }
-                    else
-                    {
-                        Debug.LogWarning($"Field '_topicName' not found in component of type {componentTransform.GetType().Name}");
-                    }
+                    AddSensorDebugGizmo(sensorObject, excavator.id, sensor);
+                    SetSensorPublisherTopics(sensorObject, excavator.id, sensor);
+                    ConfigureDirectCameraImagePublisher(sensorObject, excavator.id, sensor);
                 }
             }
         }

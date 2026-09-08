@@ -15,8 +15,8 @@ setup(
     zip_safe=True,
     maintainer='roop',
     maintainer_email='roopesh0831@gmail.com',
-    description='TODO: Package description',
-    license='TODO: License declaration',
+    description='ROS 2 helper nodes for the Unity excavator simulation.',
+    license='Apache-2.0',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [

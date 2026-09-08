@@ -1,83 +1,143 @@
 # moog-simulation
-# Excavator Simulator in Unity
 
-This project simulates an excavator in Unity using ROS integration and custom controllers for joints and tracks. It includes a detailed setup for controlling the excavator's movement and performing various tasks.
-
-## Table of Contents
-1. [Requirements](#requirements)
-2. [Installation](#installation)
-   - [Clone Repository](#clone-repository)
-   - [Unity Setup](#unity-setup)
-   - [ROS Setup](#)
-3. [Running the Simulator](#running-the-simulator)
-4. [Troubleshooting](#troubleshooting)
-
----
+Unity-based excavator simulation with ROS 2 integration. This repository contains the Unity project, ROS 2 TCP endpoint workspace, excavator configuration, and sensor publishing setup for the TERA excavation autonomy simulation environment.
 
 ## Requirements
-Ensure you have the following software installed:
 
-- [Unity](https://unity.com/download)
-- [ROS Humble](http://docs.ros.org/en/humble/Installation.html)
-- [Algoryx AGX Dynamics for Unity](https://us.download.algoryx.se/AGXUnity/documentation/current/index.html)
+- Unity 2022.3 LTS
+- ROS 2 Humble
+- Algoryx AGX Dynamics for Unity and a valid AGX license
+- `colcon` and the standard ROS 2 build tools
 
-## Unity Login
-- Email: excavator.hardware@gmail.com
-- User: UB-Excavator-Team
-- Password: Droneslab123
-## Installation
+No shared Unity login is required for normal use. The project should import from a fresh clone using the packages declared in `Unity/Excavator/Packages/manifest.json`.
 
-### 1. Clone Repository
-First, clone the repository to your local machine.
+Do not commit AGX license files, Unity account credentials, activation IDs/passwords, tokens, or other local secrets. AGX licenses are expected to be installed or activated per machine through the AGX Unity license tools.
+
+## Repository Layout
+
+- `Unity/Excavator/`: Unity project.
+- `sim_ws/`: ROS 2 workspace containing `ROS-TCP-Endpoint`, `deltacan`, and helper nodes.
+- `excavator_config.yaml`: Runtime excavator and sensor configuration consumed by the Unity scene.
+- `excavator_config_template.yaml`: Larger sensor configuration example.
+- `CAD/` and `Examples/`: Supporting assets and examples.
+
+## Setup
+
+Clone the repository:
 
 ```bash
 git clone https://github.com/droneslab/moog-simulation.git
 cd moog-simulation
 ```
 
-### 2. Unity Setup
+Open the Unity project:
 
-#### Unity
-1. Open the project in Unity:
-   - Open Unity Hub and click on "Add."
-   - Select the `Unity/Excavator` folder from the cloned repository.
-   - In Unity, navigate to the `Unity/Excavator/Assets/Scenes` directory in the Project window locate the scenes for simulating different environments.
+1. Open Unity Hub.
+2. Add `Unity/Excavator`.
+3. Let Unity restore packages from `Packages/manifest.json`.
+4. Open `Assets/Scenes/YAML_Scene.unity`.
+5. Confirm the AGX license is active from `AGXUnity -> License -> License Manager`.
 
-2. Ensure that the AGX Dynamics for Unity plugin downloaded earlier is installed by going to the menu bar and selecting **Assets -> Import Package -> Custom Package**.
+Build the ROS 2 workspace:
 
-> You should see `AGXUnity`,`Robotics` and `UnitySensors` on the ribbon
+```bash
+cd sim_ws
+source /opt/ros/humble/setup.bash
+colcon build
+source install/setup.bash
+```
 
-<!-- ### Import Assets
-1. In the Unity menu bar, go to **Window -> Asset Manager**
-2. Select the **Excavator** file you want to import
-3. Hit the dropdown in the bottom right. Press **Import To**
-4. Import it to `<Project_Folder>\Unity\Excavator\Assets\Prefab` -->
+Start the ROS TCP endpoint before pressing Play in Unity:
 
-### Configuring ROS TCP Endpoint
-1. Click on the **Robotics** option to configure ROS settings and ROS Messages.
-   ![image](https://github.com/user-attachments/assets/038e8f9d-c628-41d0-bf91-d7e2ec2cbbc7)
-2. If `/joy_deltacan` is not present then generate Custom ROSMessages inside Unity by specifying the path to `Deltcan` package folder from the cloned repository.
+```bash
+ros2 run ros_tcp_endpoint default_server_endpoint
+```
 
-### AGX Setup
-1. Activate AGX License using AGX License Manager by clicking `AGXUnity-> License -> License Manager`. Input your ID and Activation Code. This will create `agx.lfc` License file which can be used for other projects.
-2. AGX Troubleshooting - **AGXUnity -> Utils -> Update Cleanup**
+For custom Unity ROS settings:
 
-### ROS2 Setup
+```bash
+ros2 run ros_tcp_endpoint default_server_endpoint --ros-args -p ROS_IP:=<your_ip_address> -p ROS_TCP_PORT:=<your_port>
+```
 
-1. To establish communication between ROS2 and Unity, the **ROS-TCP-Endpoint** package is required. The necessary packages are provided in the `sim_ws/` directory of the repository. Build the source files using the following commands:
+## Running
 
-   ```bash
-   cd sim_ws
-   colcon build
-   source install/setup.bash
-   ```
-2. After building the workspace, establish the connection between Unity and ROS2 by running the following command:
-   If you are running default IP addresses and ports you can just run the run file
-   ```bash
-   ros2 run ros_tcp_endpoint default_server_endpoint
-   ```
-   If you need custom addresses/ports use
-   ```bash
-   ros2 run ros_tcp_endpoint default_server_endpoint --ros-args -p ROS_IP:=<your_IP_address> -p ROS_TCP_PORT:=<your_port>
-   ```
-   Replace `<your_IP_address>` and `<your_port>` with the values specified during the ROS configuration in Unity. This will start the ROS TCP server, enabling communication between Unity and ROS2.
+1. Start the ROS TCP endpoint.
+2. Press Play in `YAML_Scene.unity`.
+3. Inspect ROS topics:
+
+```bash
+ros2 topic list
+```
+
+The default config spawns two excavators. `excavator1` includes IMU and camera sensors; both excavators publish excavator state topics such as odometry, ground truth, and effector pose.
+
+## Camera Topics
+
+Camera sensors are configured in `excavator_config.yaml`. For `excavator1`, the current camera base topic is `/camera`, so ROS 2 topics are namespaced under the excavator:
+
+```text
+/excavator1/camera/color/image/compressed
+/excavator1/camera/color/camera_info
+/excavator1/camera/depth/image/compressed
+/excavator1/camera/depth/camera_info
+/excavator1/camera/depth/points
+```
+
+View the RGB stream:
+
+```bash
+ros2 run rqt_image_view rqt_image_view
+```
+
+Select:
+
+```text
+/excavator1/camera/color/image/compressed
+```
+
+RViz `Camera` displays require both the image topic and matching `camera_info`. If RViz drops messages because the camera frame is missing, publish a temporary transform:
+
+```bash
+ros2 run tf2_ros static_transform_publisher 0 0 0 0 0 0 odom excavator1/RGB_CAMERA_frame
+```
+
+Then set RViz `Fixed Frame` to `odom`.
+
+In Unity Play mode, spawned sensors are named with their excavator prefix, for example `excavator1_RGB_CAMERA`. Enable Scene view `Gizmos` and select the object to see the camera marker and frustum.
+
+## Sensor Configuration
+
+Sensors are spawned by `Unity/Excavator/Assets/Scripts/Excavator_Creator.cs` from `excavator_config.yaml`. Each excavator entry can define a `sensors` list with:
+
+- `id`: sensor instance name.
+- `type`: one of the supported prefab types, such as `IMU`, `GPS`, `LIDAR`, `RGB_CAMERA`, or `RGBD_CAMERA`.
+- `topic`: base topic. The spawner prefixes it with the excavator id.
+- `location`: attachment target such as `CHASIS`, `BOOM`, `ARM`, or `BUCKET`.
+- `offset` and `rotation`: local pose relative to the attachment target.
+
+After changing `excavator_config.yaml`, restart Unity Play mode so the scene respawns sensors.
+
+## Citation
+
+If you use this simulator in academic work, cite:
+
+```bibtex
+@INPROCEEDINGS{10979147,
+  author={Aluckal, Christo and Kumar Lal, Roopesh Vinodh and Courtney, Sean and Turkar, Yash and Dighe, Yashom and Kim, Youngjin and Gemerek, Jake and Dantu, Karthik},
+  booktitle={2025 IEEE International Conference on Simulation, Modeling, and Programming for Autonomous Robots (SIMPAR)},
+  title={TERA: A Simulation Environment for Terrain Excavation Robot Autonomy},
+  year={2025},
+  volume={},
+  number={},
+  pages={1-6},
+  keywords={Deformation;Scalability;Programming;Excavation;Real-time systems;Extensibility;Complexity theory;Time-varying systems;Autonomous robots;Excavation;Simulation;Autonomy},
+  doi={10.1109/SIMPAR62925.2025.10979147}
+}
+```
+
+## Troubleshooting
+
+- If Unity cannot connect to ROS 2, confirm `ros_tcp_endpoint` is running and Unity Robotics ROS settings match the endpoint IP and port.
+- If camera topics appear in ROS 2 but RViz shows a blank/off-white view, first verify the image in `rqt_image_view`; then check RViz `CameraInfo` and TF frame settings.
+- If Unity does not show AGX, Robotics, or UnitySensors menus after import, let package import finish and re-open the project.
+- If AGX reports a missing license, activate or import a license locally through `AGXUnity -> License -> License Manager`; do not add license files to the repository.

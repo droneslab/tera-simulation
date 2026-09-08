@@ -1,0 +1,129 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETStandard,Version=v2.1": {
+      "AGXUnity/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "compile": {
+          "bin/placeholder/AGXUnity.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AGXUnity.dll": {}
+        }
+      },
+      "AGXUnityEditor/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "dependencies": {
+          "AGXUnity": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/AGXUnityEditor.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AGXUnityEditor.dll": {}
+        }
+      },
+      "Assembly-CSharp/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "dependencies": {
+          "AGXUnity": "1.0.0",
+          "AGXUnityEditor": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Assembly-CSharp.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Assembly-CSharp.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "AGXUnity/1.0.0": {
+      "type": "project",
+      "path": "AGXUnity.csproj",
+      "msbuildProject": "AGXUnity.csproj"
+    },
+    "AGXUnityEditor/1.0.0": {
+      "type": "project",
+      "path": "AGXUnityEditor.csproj",
+      "msbuildProject": "AGXUnityEditor.csproj"
+    },
+    "Assembly-CSharp/1.0.0": {
+      "type": "project",
+      "path": "Assembly-CSharp.csproj",
+      "msbuildProject": "Assembly-CSharp.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETStandard,Version=v2.1": [
+      "AGXUnity >= 1.0.0",
+      "AGXUnityEditor >= 1.0.0",
+      "Assembly-CSharp >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "/home/moog-2/.nuget/packages/": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "/home/moog-2/christo/release/moog-simulation/Unity/Excavator/Assembly-CSharp-Editor.csproj",
+      "projectName": "Assembly-CSharp-Editor",
+      "projectPath": "/home/moog-2/christo/release/moog-simulation/Unity/Excavator/Assembly-CSharp-Editor.csproj",
+      "packagesPath": "/home/moog-2/.nuget/packages/",
+      "outputPath": "/home/moog-2/christo/release/moog-simulation/Unity/Excavator/Temp/obj/Debug/Assembly-CSharp-Editor/",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "/home/moog-2/.nuget/NuGet/NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "netstandard2.1"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "projectReferences": {
+            "/home/moog-2/christo/release/moog-simulation/Unity/Excavator/AGXUnity.csproj": {
+              "projectPath": "/home/moog-2/christo/release/moog-simulation/Unity/Excavator/AGXUnity.csproj"
+            },
+            "/home/moog-2/christo/release/moog-simulation/Unity/Excavator/AGXUnityEditor.csproj": {
+              "projectPath": "/home/moog-2/christo/release/moog-simulation/Unity/Excavator/AGXUnityEditor.csproj"
+            },
+            "/home/moog-2/christo/release/moog-simulation/Unity/Excavator/Assembly-CSharp.csproj": {
+              "projectPath": "/home/moog-2/christo/release/moog-simulation/Unity/Excavator/Assembly-CSharp.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "netstandard2.1": {
+        "targetAlias": "netstandard2.1",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.122/RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
