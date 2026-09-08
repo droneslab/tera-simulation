@@ -2,6 +2,8 @@
 
 This repository is a Unity + ROS 2 simulation project. Keep changes scoped and avoid editing generated Unity directories unless explicitly requested.
 
+Project page: https://droneslab.github.io/tera/
+
 ## Project Shape
 
 - Unity project: `Unity/Excavator/`
