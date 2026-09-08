@@ -1,4 +1,4 @@
-# moog-simulation
+# tera-simulation
 
 Unity-based excavator simulation with ROS 2 integration. This repository contains the Unity project, ROS 2 TCP endpoint workspace, excavator configuration, and sensor publishing setup for the TERA excavation autonomy simulation environment.
 
@@ -37,8 +37,8 @@ Do not commit AGX license files, Unity account credentials, activation IDs/passw
 Clone the repository:
 
 ```bash
-git clone https://github.com/droneslab/moog-simulation.git
-cd moog-simulation
+git clone https://github.com/droneslab/tera-simulation.git
+cd tera-simulation
 ```
 
 Open the Unity project:
