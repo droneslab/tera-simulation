@@ -2,9 +2,14 @@
 
 Unity-based excavator simulation with ROS 2 integration. This repository contains the Unity project, ROS 2 TCP endpoint workspace, excavator configuration, and sensor publishing setup for the TERA excavation autonomy simulation environment.
 
-Project page: https://droneslab.github.io/tera/
+## Project Links
 
-Demo video: https://droneslab.github.io/tera/static/videos/EARTH%20%7C%20Simulation.mp4
+- Project page: [droneslab.github.io/tera](https://droneslab.github.io/tera/)
+- Demo video: [EARTH | Simulation](https://droneslab.github.io/tera/static/videos/EARTH%20%7C%20Simulation.mp4)
+
+<video src="https://droneslab.github.io/tera/static/videos/EARTH%20%7C%20Simulation.mp4" controls width="100%">
+  <a href="https://droneslab.github.io/tera/static/videos/EARTH%20%7C%20Simulation.mp4">Watch the demo video</a>
+</video>
 
 ## Requirements
 
