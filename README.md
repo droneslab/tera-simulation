@@ -13,9 +13,11 @@ Unity-based excavator simulation with ROS 2 integration. This repository contain
 
 ## Requirements
 
-- Unity 2022.3 LTS
-- ROS 2 Humble
-- Algoryx AGX Dynamics for Unity and a valid AGX license
+Ensure you have the following software installed:
+
+- [Unity](https://unity.com/download)
+- [ROS Humble](http://docs.ros.org/en/humble/Installation.html)
+- [Algoryx AGX Dynamics for Unity](https://us.download.algoryx.se/AGXUnity/documentation/current/index.html)
 - `colcon` and the standard ROS 2 build tools
 
 No shared Unity login is required for normal use. The project should import from a fresh clone using the packages declared in `Unity/Excavator/Packages/manifest.json`.
