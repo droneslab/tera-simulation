@@ -11,6 +11,8 @@ Unity-based excavator simulation with ROS 2 integration. This repository contain
 
 No shared Unity login is required for normal use. The project should import from a fresh clone using the packages declared in `Unity/Excavator/Packages/manifest.json`.
 
+Terrain deformation and any entities/components that rely on deformable AGX behavior require a valid AGX license to be loaded. Without a valid AGX license, deformation-related scenes, terrain, and deformable entities should be expected to fail or behave incorrectly.
+
 Do not commit AGX license files, Unity account credentials, activation IDs/passwords, tokens, or other local secrets. AGX licenses are expected to be installed or activated per machine through the AGX Unity license tools.
 
 ## Repository Layout
@@ -35,7 +37,9 @@ Open the Unity project:
 1. Open Unity Hub.
 2. Add `Unity/Excavator`.
 3. Let Unity restore packages from `Packages/manifest.json`.
-4. Open `Assets/Scenes/YAML_Scene.unity`.
+4. Open the scene for your workflow:
+   - `Assets/Scenes/SampleScene.unity` for the non-YAML deformation analysis scene.
+   - `Assets/Scenes/YAML_Scene.unity` for YAML-configured sensor testing.
 5. Confirm the AGX license is active from `AGXUnity -> License -> License Manager`.
 
 Build the ROS 2 workspace:
@@ -61,15 +65,17 @@ ros2 run ros_tcp_endpoint default_server_endpoint --ros-args -p ROS_IP:=<your_ip
 
 ## Running
 
-1. Start the ROS TCP endpoint.
-2. Press Play in `YAML_Scene.unity`.
+1. Start the ROS TCP endpoint when using ROS-connected workflows.
+2. Press Play in the selected scene.
 3. Inspect ROS topics:
 
 ```bash
 ros2 topic list
 ```
 
-The default config spawns two excavators. `excavator1` includes IMU and camera sensors; both excavators publish excavator state topics such as odometry, ground truth, and effector pose.
+`YAML_Scene.unity` reads `excavator_config.yaml` and is the primary scene for sensor testing. The default config spawns two excavators. `excavator1` includes IMU and camera sensors; both excavators publish excavator state topics such as odometry, ground truth, and effector pose.
+
+`SampleScene.unity` is the non-YAML scene for deformation analysis. Deformation behavior depends on AGX Dynamics and requires a valid AGX license.
 
 ## Camera Topics
 
@@ -124,8 +130,8 @@ If you use this simulator in academic work, cite:
 ```bibtex
 @INPROCEEDINGS{10979147,
   author={Aluckal, Christo and Kumar Lal, Roopesh Vinodh and Courtney, Sean and Turkar, Yash and Dighe, Yashom and Kim, Youngjin and Gemerek, Jake and Dantu, Karthik},
-  booktitle={2025 IEEE International Conference on Simulation, Modeling, and Programming for Autonomous Robots (SIMPAR)},
-  title={TERA: A Simulation Environment for Terrain Excavation Robot Autonomy},
+  booktitle={2025 IEEE International Conference on Simulation, Modeling, and Programming for Autonomous Robots (SIMPAR)}, 
+  title={TERA: A Simulation Environment for Terrain Excavation Robot Autonomy}, 
   year={2025},
   volume={},
   number={},
@@ -141,3 +147,4 @@ If you use this simulator in academic work, cite:
 - If camera topics appear in ROS 2 but RViz shows a blank/off-white view, first verify the image in `rqt_image_view`; then check RViz `CameraInfo` and TF frame settings.
 - If Unity does not show AGX, Robotics, or UnitySensors menus after import, let package import finish and re-open the project.
 - If AGX reports a missing license, activate or import a license locally through `AGXUnity -> License -> License Manager`; do not add license files to the repository.
+- If deformation analysis or deformable terrain/entities do not work, first confirm that a valid AGX license is loaded.

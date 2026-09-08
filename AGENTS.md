@@ -8,6 +8,7 @@ This repository is a Unity + ROS 2 simulation project. Keep changes scoped and a
 - ROS 2 workspace: `sim_ws/`
 - Runtime excavator/sensor config: `excavator_config.yaml`
 - Main YAML scene: `Unity/Excavator/Assets/Scenes/YAML_Scene.unity`
+- Non-YAML deformation analysis scene: `Unity/Excavator/Assets/Scenes/SampleScene.unity`
 
 ## Important Rules
 
@@ -16,6 +17,7 @@ This repository is a Unity + ROS 2 simulation project. Keep changes scoped and a
 - Preserve unrelated Unity-generated `.csproj`, `Temp`, and `UserSettings` changes unless the user explicitly asks to clean them.
 - Commit Unity `.meta` files for new assets/scripts when Unity generates them.
 - Never commit AGX license files, activation IDs/passwords, Unity account credentials, tokens, `.env` files, private keys, or other local secrets.
+- Deformation behavior and deformable AGX entities require a valid AGX license. If deformation is failing, verify licensing before changing simulation logic.
 
 ## ROS 2 Workflow
 
@@ -60,3 +62,5 @@ Use `rqt_image_view` to confirm the raw stream before debugging RViz. RViz `Came
 ## Documentation
 
 Keep the root `README.md` as the source of truth for setup and user-facing workflows. The old shared Unity login flow is obsolete and should not be reintroduced.
+
+Document `YAML_Scene.unity` as the sensor-testing scene and `SampleScene.unity` as the non-YAML deformation-analysis scene unless the project structure changes.
